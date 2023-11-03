@@ -1,13 +1,16 @@
 <?php include('pdo.php')?>
 <table class ='u-table' align='center' border ='0' cellspacing="10" cellpadding="6">
         <thead style="background-color:#009999">
-          <tr>            
-            <td>ID_Participante</td>            
+          <tr>
+          <td>ID_Evento</td>            
+            <td>ID_Inscrição</td>            
             <td>Nome</td>
+            <td>RG</td>
+            <td>CPF</td>
             <td>Email</td>
-            <td>Telefone</td>
-            <td>Keypass</td>
-            <td>Orgão</td>                      
+            <td>Telefone</td>            
+            <td>Orgão</td> 
+            <td>Cargo<td>                     
           </tr>
           <thead>
         <tbody>
@@ -20,13 +23,16 @@ if(!empty($_GET['lista'])){
 
     if($sql->rowCount() > 0){
       while($rows = $sql->fetch(PDO::FETCH_ASSOC)) { ?>       
-       <tr>           
+       <tr>
+       <td> <?=$rows['id'] ?></td>        
            <td> <?=$rows['id_participante'] ?></td>
            <td> <?=$rows['nome'] ?></td>
+           <td> <?=$rows['rg'] ?></td>
+           <td> <?=$rows['cpf'] ?></td>
            <td> <?=$rows['email'] ?></td>
-           <td> <?=$rows['telefone'] ?></td>
-           <td> <?=$rows['keypass'] ?></td>
-           <td> <?=$rows['orgao'] ?></td>                           
+           <td> <?=$rows['telefone'] ?></td>           
+           <td> <?=$rows['orgao'] ?></td>   
+           <td> <?=$rows['cargo'] ?></td>                        
        </tr>
       <?php 
      }

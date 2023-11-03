@@ -59,16 +59,19 @@ include_once('pdo.php');
 
                   if($sql->rowCount() > 0){
                     while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
-                      echo "<h3 class='u-text u-text-1'>Página de Inscrição {$dados['nome']}</h3>";                   
+                      echo "<h3 class='u-text u-text-1'>Página de Inscrição</h3>"; 
+                      echo "<h3 class='u-text u-text-1'>{$dados['nome']}</h3>";                  
                       echo "<h4 class='u-text u-text-1'>Data: {$dados['data']}</h4>";
                       echo "<h4 class='u-text u-text-1'>Horário: {$dados['inicio']} às {$dados['fim']}</h4>";
                       echo "<br><br>";
                     }  
                 }
             ?> 
-            <h3 class="u-text u-text-1">Preencha suas informações</h3>
+            <h3 class="u-text u-text-1">Preencha seus dados</h3>
             <div class="u-form u-form-1">
-              
+            <input type='hidden' name='data' value="<?php echo $data ?>">
+            <input type='hidden' name='inicio' value="<?php echo $inicio ?>">
+            <input type='hidden' name='fim' value="<?php echo $fim ?>">     
           <form class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">            
              <?php
               //exibe id da tabela evento para a conexão da chave estrangeira
@@ -79,15 +82,22 @@ include_once('pdo.php');
                  echo "<input type='hidden' name='id' value='{$dados['id']}'>";                    
                }  
               }
-             ?> 
-              <input type='hidden' name='data' value="<?php echo $data ?>">
-              <input type='hidden' name='inicio' value="<?php echo $inicio ?>">
-              <input type='hidden' name='fim' value="<?php echo $fim ?>">             
+             ?>                          
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Nome:</label>
                <input type="text" placeholder="Digite seu nome" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
               </div>
-              <br><br>                
+              <br><br>  
+              <div class="u-form-group u-form-name u-label-top">
+               <label for="name-6715" class="u-label">RG:</label>
+               <input type="text" placeholder="Digite seu rg" id="rg" name="rg" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              </div>
+              <br><br> 
+              <div class="u-form-group u-form-name u-label-top">
+               <label for="name-6715" class="u-label">CPF:</label>
+               <input type="text" placeholder="Digite seu cpf" id="cpf" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              </div>
+              <br><br>             
               <div class="u-form-group u-form-name u-label-top">
                 <label for="name-6715" class="u-label">Email:</label>
                 <input type="text" placeholder="Digite seu email" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
@@ -96,19 +106,7 @@ include_once('pdo.php');
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Telefone:</label>
                <input type="text" placeholder="Digite seu Telefone" id="telefone" name="telefone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-               <br>
-                
-                <?php
-                 //exibe keypass da tabela evento para ser colocada na tabela inscrição
-                 $sql = $conexao_pdo->prepare("SELECT keypass FROM evento ORDER BY id DESC LIMIT 1");
-                 $sql->execute(); 
-
-                  if($sql->rowCount() > 0){
-                    while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
-                      echo "<input type='hidden' name='keypass' value='{$dados['keypass']}'>";
-                    }  
-                }
-                ?>
+               <br>              
                <label for="name-6715" class="u-label">Selecione seu Órgão:</label>
               </div>
               <br>                
@@ -128,7 +126,12 @@ include_once('pdo.php');
                     ?>
                     </select>                    
              </div> 
-             <br><br>                               
+             <br><br> 
+             <div class="u-form-group u-form-name u-label-top">
+               <label for="name-6715" class="u-label">Cargo:</label>
+               <input type="text" placeholder="Digite seu cargo" id="cargo" name="cargo" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              </div>
+              <br><br>                              
              <div class="u-align-left u-form-group u-form-submit u-label-top">                          
                <input type="submit" value="Registrar-se" name="inscrever" id="inscrever" class="u-btn u-btn-submit u-button-style">                  				     
              </div>

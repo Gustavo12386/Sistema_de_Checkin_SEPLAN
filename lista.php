@@ -25,9 +25,9 @@ $result = $conexao_pdo->query($sql);
            <td><a href='inscricao.php?keypass=<?=$rows['keypass'] ?>'>Link Inscrição</a></td>
            <td><a href='lista_participantes.php?lista=<?=$rows['id'] ?>'>Visualizar</a></td>
            <td><a href='qrcode.php?key=<?=$rows['keypass'] ?>' target="_blank"><img src="images/qrimg.png"  width='32px'></a></td>
-           <td><a href="editar_evento.php?editar=<?= $rows['id']?>"><img src="icons/7178171.png"  width='32px'>
+           <td><a href="editar_evento.php?editar=<?= $rows['id']?>"><img src="icons/1159633.png"  width='32px'>
            </a></td>
-           <td><a class='btn btn-secondary' href="deletar.php?deletar=<?= $rows['id']?>"><img src="icons/delete.png" width='25px'>
+           <td><a class='btn btn-danger' href="deletar.php?deletar=<?= $rows['id']?>"><img src="icons/delete.png" width='25px'>
           </a></td>           
        </tr>
       <?php 

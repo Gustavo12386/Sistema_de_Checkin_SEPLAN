@@ -3,13 +3,15 @@ include('pdo.php');
     
    $id_evento = $_POST['id'];
    $nome = $_POST['nome'];
+   $rg = $_POST['rg'];
+   $cpf = $_POST['cpf'];
    $email = $_POST['email'];
-   $telefone = $_POST['telefone'];
-   $keypass = $_POST['keypass'];
+   $telefone = $_POST['telefone'];   
    $orgao = $_POST['orgao'];
-   
-   $sql = $conexao_pdo->prepare("INSERT INTO participantes (id, nome, email, telefone, keypass, orgao) VALUES (?, ?, ?, ?, ?, ?)");
-   $sql->execute(array( $id_evento, $nome, $email, $telefone, $keypass, $orgao));
+   $cargo = $_POST['cargo'];
+
+   $sql = $conexao_pdo->prepare("INSERT INTO participantes (id, nome, rg, cpf, email, telefone, orgao, cargo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+   $sql->execute(array( $id_evento, $nome, $rg, $cpf, $email, $telefone, $orgao, $cargo));
       
    //verfica se a inscrição foi realizada
    if($sql->rowCount() > 0)
