@@ -31,10 +31,9 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.php">Home</a></li>
-                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href="eventos.php">Eventos/Reuniões</a></li>
-                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href="sair.php">Sair</a></li>
-                  
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.php">Home</a></li>                
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href='eventos.php'>Eventos/Reuniões</a></li>              
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href="sair.php">Sair</a></li>                 
                 </ul>
               </div>
             </div>
@@ -49,7 +48,7 @@
 	<section class="u-align-center u-clearfix u-image u-shading u-section-1" id="carousel_5ad0" src="" data-image-width="1782" data-image-height="1080">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-custom-font u-font-montserrat u-text u-text-body-alt-color u-title u-text-1"><span style="font-size: 1.875rem;" class="u-text-palette-2-base">
-            <br>CHEKING SEPLAN
+            <br>CHECKING SEPLAN
           </span>
         </h1>
        

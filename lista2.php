@@ -2,7 +2,7 @@
 <table class ='u-table' align='center' border ='0' cellspacing="10" cellpadding="6">
         <thead style="background-color:#009999">
           <tr>
-          <td>ID_Evento</td>            
+            <td>ID_Evento</td>            
             <td>ID_Inscrição</td>            
             <td>Nome</td>
             <td>RG</td>

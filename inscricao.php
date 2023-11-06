@@ -54,8 +54,10 @@ include_once('pdo.php');
               ?>          
            <?php
                 //exibe informações do evento
-                 $sql = $conexao_pdo->prepare("SELECT nome, data, inicio, fim FROM evento ORDER BY id DESC LIMIT 1;");
-                 $sql->execute(); 
+                if(!empty($_GET['keypass'])){
+                  $key = $_GET['keypass'];
+                  $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=?");
+                  $sql->execute(array($key));
 
                   if($sql->rowCount() > 0){
                     while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
@@ -64,24 +66,27 @@ include_once('pdo.php');
                       echo "<h4 class='u-text u-text-1'>Data: {$dados['data']}</h4>";
                       echo "<h4 class='u-text u-text-1'>Horário: {$dados['inicio']} às {$dados['fim']}</h4>";
                       echo "<br><br>";
-                    }  
-                }
+                    }
+                  }
+                               
+                }   
             ?> 
             <h3 class="u-text u-text-1">Preencha seus dados</h3>
             <div class="u-form u-form-1">
-            <input type='hidden' name='data' value="<?php echo $data ?>">
-            <input type='hidden' name='inicio' value="<?php echo $inicio ?>">
-            <input type='hidden' name='fim' value="<?php echo $fim ?>">     
+                              
           <form class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">            
              <?php
               //exibe id da tabela evento para a conexão da chave estrangeira
-              $sql = $conexao_pdo->prepare("SELECT id FROM evento ORDER BY id DESC LIMIT 1");
-              $sql->execute(); 
-              if($sql->rowCount() > 0){
-               while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
-                 echo "<input type='hidden' name='id' value='{$dados['id']}'>";                    
-               }  
+              if(!empty($_GET['keypass'])){
+                $key = $_GET['keypass'];
+                $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=?");
+                $sql->execute(array($key));
+                if($sql->rowCount() > 0){
+                while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
+                  echo "<input type='hidden' name='id' value='{$dados['id']}'>";                    
+                }  
               }
+            }
              ?>                          
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Nome:</label>

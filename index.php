@@ -1,7 +1,6 @@
 <?php
 session_start();
-include "top.php";
-
+include "top.php";	
 //se o usuário não estiver logado
 if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
 {
@@ -10,8 +9,6 @@ if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
    echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
 }
 $logado = $_SESSION['nome'];
-
-
 ?>
     <section class="u-clearfix u-image u-section-3" src="" id="sec-e0b0" data-image-width="5760" data-image-height="3840">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">

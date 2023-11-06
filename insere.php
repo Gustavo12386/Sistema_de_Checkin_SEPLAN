@@ -17,7 +17,7 @@ else {
 
 // Prepara o Insert
 $insere = $conexao_pdo->prepare("
-	INSERT INTO `bd_cheking`.`evento` (
+	INSERT INTO `bd_cheking`.`evento` (		
 		`nome`,
 		`data`,
 		`inicio`,
@@ -27,7 +27,7 @@ $insere = $conexao_pdo->prepare("
 		`keypass`
 	) 
 	VALUES
-	( ?, ?, ?, ?, ?, ?, ? )
+	( ?, ?, ?, ?, ?, ?, ?)
 ");
 
 // Insere
