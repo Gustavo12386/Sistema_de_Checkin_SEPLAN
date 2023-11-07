@@ -1,8 +1,8 @@
 <?php include('pdo.php')?>
 <table class ='u-table' align='center' border ='0' cellspacing="10" cellpadding="6">
-        <thead style="background-color:#009999">
+        <thead style="background-color:#878787">
           <tr>
-            <td>ID_Evento</td>            
+            <td class="d-print-none">ID_Evento</td>            
             <td>ID_Inscrição</td>            
             <td>Nome</td>
             <td>RG</td>
@@ -24,7 +24,7 @@ if(!empty($_GET['lista'])){
     if($sql->rowCount() > 0){
       while($rows = $sql->fetch(PDO::FETCH_ASSOC)) { ?>       
        <tr>
-       <td> <?=$rows['id'] ?></td>        
+       <td class="d-print-none"> <?=$rows['id'] ?></td>        
            <td> <?=$rows['id_participante'] ?></td>
            <td> <?=$rows['nome'] ?></td>
            <td> <?=$rows['rg'] ?></td>

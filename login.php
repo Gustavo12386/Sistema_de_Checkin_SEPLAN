@@ -26,7 +26,7 @@
             <div class="u-form u-form-1">
               
             <form class="enviar" action="realizar_login.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">
-            
+                <input type="hidden" name="id">
                 <div class="u-form-group u-form-name u-label-top">
                   <label for="name-6715" class="u-label">Nome do Usuário:</label>
                   <input type="text" placeholder="Digite o nome do usuário" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">

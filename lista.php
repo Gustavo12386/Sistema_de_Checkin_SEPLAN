@@ -9,8 +9,8 @@ $result = $conexao_pdo->query($sql);
           <tr>
             <td>ID</td>
             <td>Nome</td>
-            <td>Link</td>
             <td>Participantes</td>
+            <td>Link</td>
             <td>Ações</td>
             <td>Editar</td>
             <td>Deletar</td>            
@@ -29,12 +29,12 @@ $result = $conexao_pdo->query($sql);
        <tr>
            <td> <?=$rows['id'] ?></td>
            <td> <?=$rows['nome'] ?></td>
-           <td><a href='inscricao.php?keypass=<?=$rows['keypass'] ?>'>Link Inscrição</a></td>
            <td><a href='lista_participantes.php?lista=<?=$rows['id'] ?>'>Visualizar</a></td>
+           <td><a href='inscricao.php?keypass=<?=$rows['keypass'] ?>'>Link Inscrição</a></td>           
         <?php
         if($date_now == $data and $hora > $inicio and $hora < $fim) {
         ?>   
-        <td><a class='btn btn-secondary' href='#' target="_blank"><img src="images/qrimg.png"  width='25px'></a></td>
+        <td><a class='btn btn-secondary' href='#' ><img src="images/qrimg.png"  width='25px'></a></td>
          <td><a class='btn btn-secondary' href="#"><img src="icons/1159633.png"  width='25px'>
          </a></td>
          <td><a class='btn btn-secondary' href="#"><img src="icons/delete.png" width='25px'>
@@ -43,7 +43,7 @@ $result = $conexao_pdo->query($sql);
        <?php 
         } else if($date_now == $data and $hora > $fim) {      
        ?>           
-       <td><a class='btn btn-secondary' href='#' target="_blank"><img src="images/qrimg.png"  width='25px'></a></td>
+       <td><a class='btn btn-secondary' href='#'><img src="images/qrimg.png"  width='25px'></a></td>
         <td><a class='btn btn-secondary' href="#"><img src="icons/1159633.png"  width='25px'>
         </a></td>
         <td><a class='btn btn-secondary' href="#"><img src="icons/delete.png" width='25px'>
@@ -52,7 +52,7 @@ $result = $conexao_pdo->query($sql);
       <?php 
        } else if($date_now > $data) {     
       ?> 
-        <td><a class='btn btn-secondary' href='#' target="_blank"><img src="images/qrimg.png"  width='25px'></a></td>
+        <td><a class='btn btn-secondary' href='#'><img src="images/qrimg.png"  width='25px'></a></td>
         <td><a class='btn btn-secondary' href="#"><img src="icons/1159633.png"  width='25px'>
         </a></td>
         <td><a class='btn btn-secondary' href="#"><img src="icons/delete.png" width='25px'>

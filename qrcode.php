@@ -27,6 +27,7 @@ $writer = new Writer($renderer);
 //$writer->writeFile('http://www.seplan.ba.gov.br', 'qrcode.png');
 
 ?>
+    
 <table align="center" border="0">
 <tr>
 <td align="center">

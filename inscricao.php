@@ -82,9 +82,9 @@ include_once('pdo.php');
                 $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=?");
                 $sql->execute(array($key));
                 if($sql->rowCount() > 0){
-                while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
-                  echo "<input type='hidden' name='id' value='{$dados['id']}'>";                    
-                }  
+                  while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
+                    echo "<input type='hidden' name='id' value='{$dados['id']}'>";                    
+                  }  
               }
             }
              ?>                          

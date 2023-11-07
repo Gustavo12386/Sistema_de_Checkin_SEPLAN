@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include_once('pdo.php');
 
 $nome = $_POST['nome'];
@@ -15,6 +15,7 @@ $sql->execute(array($nome, $senhamd5));
 
 if($sql->rowCount() > 0)
 {
+   session_start(); 
    $_SESSION['nome'] = $nome;
    $_SESSION['senha'] = $senha;
    $sql->fetch();   
