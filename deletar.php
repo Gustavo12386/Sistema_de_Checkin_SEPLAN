@@ -10,7 +10,7 @@ if(!empty($_GET['deletar']))
 
   //verfica se o campo foi deletado
   if($deletar->rowCount() > 0)
-  {
+  {   
    echo "<script language='javascript' type='text/javascript'>window.location.href='eventos.php'</script>";     
   }
   else
