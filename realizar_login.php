@@ -2,8 +2,8 @@
 
 include_once('pdo.php');
 
-$nome = $_POST['nome'];
-$senha = $_POST['senha'];
+$nome = addslashes($_POST['nome']);
+$senha = addslashes($_POST['senha']);
 
 //reconhece a criptografia 
 $senhamd5 = md5($senha);
@@ -16,9 +16,9 @@ $sql->execute(array($nome, $senhamd5));
 if($sql->rowCount() > 0)
 {
    session_start(); 
-   $_SESSION['nome'] = $nome;
-   $_SESSION['senha'] = $senha;
    $sql->fetch();   
+   $_SESSION['nome'] = $nome;
+   $_SESSION['senha'] = $senha;   
    echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";
 }
 
