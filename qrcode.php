@@ -77,13 +77,19 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
 </td>
 </tr>
 <tr>
-<td align="center" bordercolor="#000000">
- <input type="button" class="botao" value="Imprimir" onClick="window.print()">
+<td align="center">
+ <input type="button" id="botao" value="Imprimir" onClick="window.print()">
 </td>
 </tr>
 </table>
 <style>
-.botao{  
+@media print{
+ #botao { display:none; }   
+@page{
+  size: landscape;
+}
+}  
+#botao{  
   background-color: #232b79;
   border-width: 0px; 
   color: white;
@@ -91,7 +97,7 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
   height: 35px;
   cursor: pointer;
 }
-.botao:hover{
+#botao:hover{
   background-color: #20286E;
 }
 </style>

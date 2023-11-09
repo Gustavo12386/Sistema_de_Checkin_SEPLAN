@@ -110,7 +110,7 @@ include_once('pdo.php');
               <br><br>
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Telefone:</label>
-               <input type="text" placeholder="Digite seu Telefone" id="telefone" name="telefone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+               <input type="text" placeholder="Digite seu telefone" id="telefone" name="telefone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                <br>              
                <label for="name-6715" class="u-label">Selecione seu Órgão:</label>
               </div>

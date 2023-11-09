@@ -16,8 +16,7 @@ $logado = $_SESSION['nome'];
 <section class="u-clearfix u-image u-section-3" src="" id="sec-e0b0" data-image-width="5760" data-image-height="3840">
 <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
   <div class="u-align-center u-container-style u-group u-opacity u-opacity-70 u-white u-group-1">
-    <div class="u-container-layout u-container-layout-1">
-      <h3 class="u-text u-text-1">Participantes Presentes</h3>
+    <div class="u-container-layout u-container-layout-1">      
       <br>
       <?php
                 //exibe informações do evento
@@ -31,12 +30,13 @@ $logado = $_SESSION['nome'];
                       echo "<h3 class='u-text u-text-1'>{$dados['nome']}</h3>"; 
                       echo "<br>";                 
                       echo "<h4 class='u-text u-text-1'>Data: {$dados['data']}</h4>";                      
-                      echo "<br><br>";
+                      echo "<br>";
                     }
                   }
                                
                 }   
-            ?> 
+      ?>
+      <h3 class="u-text u-text-1">Participantes Presentes</h3> 
       <br>
       <?php include "lista2.php"; ?>
       <br>

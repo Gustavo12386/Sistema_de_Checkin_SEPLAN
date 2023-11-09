@@ -13,9 +13,12 @@
 
   <header class="u-clearfix u-header u-header" id="sec-a184"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="index.php" class="u-image u-logo u-image-1" data-image-width="275" data-image-height="37" title="Home">
-          <img src="images/logo-seplan-1.png" class="u-logo-image u-logo-image-1">
+          <img src="images/logo-seplan-1.png" class="tamanho">
         </a>	  
 	</header> 
   <br><br><br>  
 	<body data-home-page="index.php" data-home-page-title="Home" class="u-body u-xl-mode" data-lang="pt">
-	
+
+ 
+
+
