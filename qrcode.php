@@ -84,10 +84,7 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
 </table>
 <style>
 @media print{
- #botao { display:none; }   
-@page{
-  size: landscape;
-}
+ #botao { display:none; }
 }  
 #botao{  
   background-color: #232b79;

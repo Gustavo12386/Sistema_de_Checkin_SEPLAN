@@ -16,7 +16,7 @@ $sql->execute(array($nome, $senhamd5));
 if($sql->rowCount() > 0)
 {
    session_start(); 
-   $sql->fetch();   
+   $sql->fetch();  
    $_SESSION['nome'] = $nome;
    $_SESSION['senha'] = $senha;   
    echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";

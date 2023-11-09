@@ -25,6 +25,10 @@
     //verifica se os dados foram atualizados
     if($query->rowCount() > 0)
     {
+      $mensagem = "Evento Atualizado com Sucesso!";
+      echo "<script language='javascript'>";
+      echo "alert('".$mensagem."');";
+      echo "</script>";      
       echo "<script language='javascript' type='text/javascript'>window.location.href='eventos.php'</script>";
     } else if($query->rowCount() == 0){
       echo "<script language='javascript' type='text/javascript'>window.location.href='eventos.php'</script>";

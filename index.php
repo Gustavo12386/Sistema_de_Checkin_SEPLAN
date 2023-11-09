@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "top.php";	
-//se o usuário não estiver logado
+include "top.php";
+
 if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
 {
    unset($_SESSION['nome']);
@@ -18,8 +18,7 @@ $logado = $_SESSION['nome'];
             <div class="u-form u-form-1">
               
             <form class="enviar" action="insere.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">
-            
-                <div class="u-form-group u-form-name u-label-top">
+               <div class="u-form-group u-form-name u-label-top">
                   <label for="name-6715" class="u-label">Nome evento:</label>
                   <input type="text" placeholder="Digite o nome do evento" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
                 </div>

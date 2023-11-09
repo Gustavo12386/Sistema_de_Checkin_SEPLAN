@@ -17,7 +17,6 @@ $logado = $_SESSION['nome'];
 <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
   <div class="u-align-center u-container-style u-group u-opacity u-opacity-70 u-white u-group-1">
     <div class="u-container-layout u-container-layout-1">      
-      <br>
       <?php
                 //exibe informações do evento
                 if(!empty($_GET['lista'])){
