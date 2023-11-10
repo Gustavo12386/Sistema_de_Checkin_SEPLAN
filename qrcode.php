@@ -47,14 +47,17 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
 
 <?php
   //Exibe nome do evento
-  $sql = $conexao_pdo->prepare("SELECT nome FROM evento ORDER BY id DESC LIMIT 1");
-  $sql->execute(); 
+  if(!empty($_GET['key'])){
+  $key = $_GET['key'];  
+  $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=?");
+  $sql->execute(array($key)); 
 
   if($sql->rowCount() > 0){
    while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
         echo "{$dados['nome']}";
       }  
     }
+  }  
 ?>
                 
 </div>
