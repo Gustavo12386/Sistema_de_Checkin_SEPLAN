@@ -1,7 +1,6 @@
 <?php
     include('pdo.php');
-    //Realiza a edição do evento
-    if(isset($_POST['update'])){    
+    //Realiza a edição do evento       
     
     $id = $_POST['id'];
     $nome = $_POST['nome'];
@@ -40,7 +39,7 @@
         })';
         echo'</script>';
       }  
-    }          
+          
 
 ?>
 

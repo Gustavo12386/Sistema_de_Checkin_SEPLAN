@@ -9,8 +9,10 @@ $senha = addslashes($_POST['senha']);
 $senhamd5 = md5($senha);
 
 //localiza o email e senha e realiza o login
-$sql = $conexao_pdo->prepare("SELECT * FROM usuario WHERE nome = ? AND senha = ?");
-$sql->execute(array($nome, $senhamd5));
+$sql = $conexao_pdo->prepare("SELECT * FROM usuario WHERE nome = :nome AND senha = :senha");
+$sql->bindparam(':nome', $nome);
+$sql->bindparam(':senha', $senhamd5);
+$sql->execute();
 
 
 if($sql->rowCount() > 0)
