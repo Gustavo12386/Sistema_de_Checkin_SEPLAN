@@ -17,7 +17,7 @@ include_once('pdo.php');
 <body>  
   <header class="u-clearfix u-header u-header" id="sec-a184"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="index.php" class="u-image u-logo u-image-1" data-image-width="275" data-image-height="37" title="Home">
-          <img src="images/logo-seplan-1.png" class="u-logo-image u-logo-image-1">
+          <img src="images/logo-seplan-1.png" class="tamanho2">
         </a>         
 	</header>       
     <section class="u-clearfix u-image u-section-3" src="" id="sec-e0b0" data-image-width="5760" data-image-height="3840">
@@ -52,7 +52,8 @@ include_once('pdo.php');
                 {
                 echo "<script language='javascript' type='text/javascript'>window.location.href='mensagem.php'</script>";
                 }
-              ?>          
+              ?>  
+           <br><br>           
            <?php
                 //exibe informações do evento
                 if(!empty($_GET['keypass'])){
@@ -151,6 +152,12 @@ include_once('pdo.php');
         </div>
       </div>
     </section>
+<style>
+  .tamanho2{
+    width: 325px;
+    margin: 9px;
+  } 
+</style>
  </body>  
 </html>  
  
