@@ -28,8 +28,9 @@ include_once('pdo.php');
               // Determinar um periodo que o formulário de inscrição ficará aberto
               if(!empty($_GET['keypass'])){
                 $key = $_GET['keypass'];
-                $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=?");
-                $sql->execute(array($key)); 
+                $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
+                $sql->bindparam(':keypass', $key);
+                $sql->execute(); 
 
                   if($sql->rowCount() > 0)
                   {
@@ -56,8 +57,9 @@ include_once('pdo.php');
                 //exibe informações do evento
                 if(!empty($_GET['keypass'])){
                   $key = $_GET['keypass'];
-                  $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=?");
-                  $sql->execute(array($key));
+                  $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
+                  $sql->bindparam(':keypass', $key);
+                  $sql->execute(); 
 
                   if($sql->rowCount() > 0){
                     while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
@@ -79,8 +81,10 @@ include_once('pdo.php');
               //exibe id da tabela evento para a conexão da chave estrangeira
               if(!empty($_GET['keypass'])){
                 $key = $_GET['keypass'];
-                $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=?");
-                $sql->execute(array($key));
+                $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
+                $sql->bindparam(':keypass', $key);
+                $sql->execute();
+
                 if($sql->rowCount() > 0){
                   while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
                     echo "<input type='hidden' name='id' value='{$dados['id']}'>";                    
@@ -119,7 +123,7 @@ include_once('pdo.php');
                     <select name="orgao" style="width:200px; height:30px;">                    
                     <?php
                     // exibe os orgãos para realizar a seleção do orgão
-                      $stmt = $conexao_pdo->prepare("SELECT nome_orgao FROM orgao");
+                      $stmt = $conexao_pdo->prepare("SELECT * FROM orgao");
                       $stmt->execute();
                       
                         if($stmt->rowCount() > 0){

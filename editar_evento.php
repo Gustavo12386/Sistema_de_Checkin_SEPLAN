@@ -18,8 +18,9 @@ $logado = $_SESSION['nome'];
  if(!empty($_GET['editar'])){
 
   $id = $_GET['editar']; 
-  $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE id=?");
-  $sql->execute(array($id));
+  $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE id=:id");
+  $sql->bindparam(':id', $id);
+  $sql->execute();
 
   if($sql->rowCount() > 0)
   {

@@ -20,9 +20,10 @@ $logado = $_SESSION['nome'];
       <?php
                 //exibe informações do evento
                 if(!empty($_GET['lista'])){
-                  $key = $_GET['lista'];
-                  $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE id=?");
-                  $sql->execute(array($key));
+                  $id = $_GET['lista'];
+                  $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE id=:id");
+                  $sql->bindparam(':id', $id);
+                  $sql->execute();
 
                   if($sql->rowCount() > 0){
                     while($dados = $sql->fetch(PDO::FETCH_ASSOC)){                       
