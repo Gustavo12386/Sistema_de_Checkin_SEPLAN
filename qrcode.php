@@ -48,9 +48,10 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
 <?php
   //Exibe nome do evento
   if(!empty($_GET['key'])){
-  $key = $_GET['key'];  
-  $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=?");
-  $sql->execute(array($key)); 
+  $keypass = $_GET['key'];  
+  $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
+  $sql->bindparam(':keypass', $keypass);
+  $sql->execute(); 
 
   if($sql->rowCount() > 0){
    while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
