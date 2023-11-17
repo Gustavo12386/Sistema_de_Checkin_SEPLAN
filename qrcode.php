@@ -67,7 +67,7 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
 <tr>
 <td align="center">
 <br><br>
-<?php echo ($writer->writeString('http://localhost/checking/inscricao.php?key='.$key));?>
+<?php echo ($writer->writeString('http://10.22.12.5/checking/inscricao.php?keypass='.$key));?>
 </td>
 </tr>
 <tr>
