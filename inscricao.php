@@ -153,6 +153,7 @@ include_once('pdo.php');
       </div>
     </section>
 <style>
+  
   .tamanho2{
     width: 325px;
     margin: 9px;
