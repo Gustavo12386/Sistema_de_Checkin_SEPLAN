@@ -1,0 +1,35 @@
+@media screen and (max-width : 1120px){
+    .u-button-style{
+      width: 220px;
+      height: 90px;
+      font-size: 30px;
+    }
+    .u-border-1{
+       width: 900px; 
+       height: 78px;
+       margin-top: 12px;
+    }
+    .u-label{
+       font-size: 35px;    
+    }
+    
+    .u-header .tamanho2{
+        width: 600px;
+        margin: 15px;
+        margin-top:50px;
+    } 
+    .div-texto .u-text-1{
+     font-size: 50px;   
+    }
+    .u-fonte .fonte{
+     font-size: 60px;  
+    }
+    .u-form-group .menu{            
+     width: 360px;
+     height: 85px;
+     font-size: 32px;  
+    }  
+    ::placeholder{
+      font-size: 32px;  
+    }
+  }

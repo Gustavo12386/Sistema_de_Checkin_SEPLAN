@@ -4,9 +4,10 @@ include_once('pdo.php');
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-br">
 <head>  
-  <meta charset="utf-8">   
+  <meta charset="utf-8" name="viewport">   
   <title>Inscrição</title>  
   <link rel="stylesheet" href="css/nicepage.css" media="screen"> 
+  <link rel="stylesheet" href="css/responsivo.css"> 
   <script src="js/jquery-1.11.1.min.js"></script>
   <script src="js/sweet.js"></script>
   <script src="js/scripts2.js"></script>  
@@ -15,8 +16,9 @@ include_once('pdo.php');
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">     
 </head>
 <body>  
-  <header class="u-clearfix u-header u-header" id="sec-a184"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="index.php" class="u-image u-logo u-image-1" data-image-width="275" data-image-height="37" title="Home">
+<div class="u-clearfix u-sheet u-sheet-1">
+<header class="u-clearfix u-header u-header" id="sec-a184">
+        <a href="index.php" title="Home">
           <img src="images/logo-seplan-1.png" class="tamanho2">
         </a>         
 	</header>       
@@ -64,18 +66,28 @@ include_once('pdo.php');
 
                   if($sql->rowCount() > 0){
                     while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
-                      echo "<h3 class='u-text u-text-1'>Página de Inscrição</h3>"; 
-                      echo "<h3 class='u-text u-text-1'>{$dados['nome']}</h3>";                  
-                      echo "<h4 class='u-text u-text-1'>Data: {$dados['data']}</h4>";
-                      echo "<h4 class='u-text u-text-1'>Horário: {$dados['inicio']} às {$dados['fim']}</h4>";
-                      echo "<br><br>";
+                      $nome = $dados['nome'];
+                      $data = $dados['data'];
+                      $inicio = $dados['inicio'];
+                      $fim = $dados['fim']; 
+                    ?>
+                    <div class="div-texto">  
+                      <h3 class="u-text u-text-1">Página de Inscrição</h3>
+                      <h3 class="u-text u-text-1"><?php echo $nome;?></h3>              
+                      <h4 class="u-text u-text-1">Data: <?php echo $data;?></h4>
+                      <h4 class="u-text u-text-1">Horário: <?php echo $inicio;?> às <?php echo $fim; ?></h4>
+                      <br><br>
+                    </div>  
+                   <?php   
                     }
-                  }
-                               
+                  }                               
                 }   
-            ?> 
-            <h3 class="u-text u-text-1">Preencha seus dados</h3>
-            <div class="u-form u-form-1">
+             ?>
+           <div class="u-fonte">  
+            <h3 class='fonte'>Preencha seus dados</h3>
+           </div> 
+           <br>
+          <div class="u-form u-form-1">
                               
           <form class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">            
              <?php
@@ -121,7 +133,7 @@ include_once('pdo.php');
               </div>
               <br>                
               <div class="u-form-group u-form-name u-label-top">              
-                    <select name="orgao" style="width:200px; height:30px;">                    
+                    <select name="orgao" class="menu">                    
                     <?php
                     // exibe os orgãos para realizar a seleção do orgão
                       $stmt = $conexao_pdo->prepare("SELECT * FROM orgao");
@@ -152,13 +164,23 @@ include_once('pdo.php');
         </div>
       </div>
     </section>
-<style>
-  
-  .tamanho2{
-    width: 325px;
-    margin: 9px;
-  } 
-</style>
+   <style>
+    .tamanho2{
+    width: 320px;
+    margin: 11px;
+    margin-top:20px;
+    }
+    .u-text-1{
+      font-size: 30px;   
+    }
+    .fonte{
+    font-size: 35px;  
+    }
+    .menu{
+    width:200px;
+    height:38px;  
+    }  
+   </style> 
  </body>  
 </html>  
  
