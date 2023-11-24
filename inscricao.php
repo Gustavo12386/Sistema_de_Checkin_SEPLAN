@@ -27,7 +27,7 @@ include_once('pdo.php');
         <div class="u-align-center u-container-style u-group u-opacity u-opacity-70 u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
           <?php
-              // Determinar um periodo que o formulário de inscrição ficará aberto
+              // Determinar um periodo que o formulário de inscrição ficará disponível
               if(!empty($_GET['keypass'])){
                 $key = $_GET['keypass'];
                 $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
@@ -91,7 +91,7 @@ include_once('pdo.php');
                               
           <form class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">            
              <?php
-              //exibe id da tabela evento para a conexão da chave estrangeira
+              //exibe id da tabela evento para a conexão com a tabela participantes por meio da chave estrangeira
               if(!empty($_GET['keypass'])){
                 $key = $_GET['keypass'];
                 $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
@@ -155,7 +155,7 @@ include_once('pdo.php');
               </div>
               <br><br>                              
              <div class="u-align-left u-form-group u-form-submit u-label-top">                          
-               <input type="submit" value="Registrar-se" name="inscrever" id="inscrever" class="u-btn u-btn-submit u-button-style">                  				     
+               <input type="submit" value="Inscrever-se" name="inscrever" id="inscrever" class="u-btn u-btn-submit u-button-style">                  				     
              </div>
              </form>
              <div class="mostrar"></div>	  		

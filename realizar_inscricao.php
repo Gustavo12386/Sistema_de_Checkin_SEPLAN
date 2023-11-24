@@ -25,11 +25,12 @@ include('pdo.php');
    //verfica se a inscrição foi realizada
    if($sql->rowCount() > 0)
    {
-    echo '<script>';
-    echo '$(document).ready(function(){
-    swal("Inscricao Realizada com Sucesso!","", "success");        
-    })';
-    echo'</script>';        
+    echo "<script language='javascript' type='text/javascript'>window.location.href='eventos.php'</script>";   
+   // echo '<script>';
+ //   echo '$(document).ready(function(){
+  //  swal("Inscricao Realizada com Sucesso!","", "success");        
+  //  })';
+  //  echo'</script>';        
    } else
    {
     echo '<script>';
@@ -37,14 +38,6 @@ include('pdo.php');
     swal("Ocorreu Um erro!","", "warning");        
     })';
     echo'</script>';
-   }
-
-                      
-      
-     
-
-
-
-  
+   } 
    
 ?>

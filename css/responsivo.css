@@ -3,20 +3,24 @@
       width: 220px;
       height: 90px;
       font-size: 30px;
+      margin-left: 45px;  
     }
     .u-border-1{
-       width: 900px; 
+       width: 840px; 
        height: 78px;
+       margin-left: 45px;
        margin-top: 12px;
+       font-size: 35px;       
     }
     .u-label{
-       font-size: 35px;    
+       font-size: 35px;  
+       margin-left: 45px;  
     }
     
     .u-header .tamanho2{
         width: 600px;
-        margin: 15px;
-        margin-top:50px;
+        margin-left: 65px;
+        margin-top: 50px;
     } 
     .div-texto .u-text-1{
      font-size: 50px;   
@@ -25,11 +29,13 @@
      font-size: 60px;  
     }
     .u-form-group .menu{            
-     width: 360px;
-     height: 85px;
-     font-size: 32px;  
+     width: 358px;
+     height: 78px;
+     font-size: 28px;  
+     margin-left: 45px;  
     }  
     ::placeholder{
       font-size: 32px;  
     }
+ 
   }

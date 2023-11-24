@@ -2,13 +2,14 @@
 session_start();
 include "top.php";
 
+//se o usuário não estiver logado
 if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
 {
    unset($_SESSION['nome']);
    unset($_SESSION['senha']);
    echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
 }
-
+//se o usuário estiver logado
 $logado = $_SESSION['nome'];
 
 

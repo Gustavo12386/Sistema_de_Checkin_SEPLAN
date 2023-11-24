@@ -1,6 +1,17 @@
 <?php
+session_start();
 extract($_GET); // Transforma em variável
 include_once('pdo.php');
+
+//se o usuário não estiver logado
+if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
+{
+   unset($_SESSION['nome']);
+   unset($_SESSION['senha']);
+   echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
+}
+//se o usuário estiver logado
+$logado = $_SESSION['nome'];
 
 //exit();
 include 'composer/vendor/autoload.php';
@@ -27,7 +38,11 @@ $writer = new Writer($renderer);
 //$writer->writeFile('http://www.seplan.ba.gov.br', 'qrcode.png');
 
 ?>
-    
+
+
+
+
+
 <table align="center" border="0">
 <tr>
 <td align="center">

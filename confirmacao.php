@@ -21,7 +21,7 @@
           <div class="u-container-layout u-container-layout-1">              
             <?php
             echo '<br><br><br>';
-            echo '<h1 class="u-text u-text-1">Esse Evento já foi Realizado!</h1>';           
+            echo '<h3 class="u-text u-text-1">Inscrição Realizada com Sucesso!</h3>';           
             ?>                  
             </div>			
           </div>
