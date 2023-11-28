@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "pdo.php";
-include "top2.php";
+include ('pdo.php');
+include ('topo2.php');
 
 //se o usuário não estiver logado
 if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
@@ -57,7 +57,7 @@ $logado = $_SESSION['nome'];
             <h3 class="u-text u-text-1">Atualize seu evento</h3>
             <div class="u-form u-form-1">
               
-            <form class="aviso" id="formDados" action="editar.php" method="POST" style="padding: 15px;"  enctype="multipart/form-data">
+            <form id="formDados" action="editar.php" method="POST" style="padding: 15px;"  enctype="multipart/form-data">
             
                 <div class="u-form-group u-form-name u-label-top">
                   <label for="name-6715" class="u-label">Nome evento:</label>

@@ -1,5 +1,5 @@
 <?php
-include_once('pdo.php');
+include('pdo.php');
 ?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-br">
@@ -8,10 +8,6 @@ include_once('pdo.php');
   <title>Inscrição</title>  
   <link rel="stylesheet" href="css/nicepage.css" media="screen"> 
   <link rel="stylesheet" href="css/responsivo.css"> 
-  <script src="js/jquery-1.11.1.min.js"></script>
-  <script src="js/sweet.js"></script>
-  <script src="js/scripts2.js"></script>  
-  <script src="js/nicepage.js"></script>    
   <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">     
 </head>
@@ -27,7 +23,7 @@ include_once('pdo.php');
         <div class="u-align-center u-container-style u-group u-opacity u-opacity-70 u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
           <?php
-              // Determinar um periodo que o formulário de inscrição ficará disponível
+              // Determina um periodo que o formulário de inscrição ficará disponível
               if(!empty($_GET['keypass'])){
                 $key = $_GET['keypass'];
                 $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
@@ -89,9 +85,9 @@ include_once('pdo.php');
            <br>
           <div class="u-form u-form-1">
                               
-          <form class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">            
+          <form action="realizar_inscricao.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">            
              <?php
-              //exibe id da tabela evento para a conexão com a tabela participantes por meio da chave estrangeira
+              //exibe id da tabela evento para a conexão com a tabela evento por meio da chave estrangeira
               if(!empty($_GET['keypass'])){
                 $key = $_GET['keypass'];
                 $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
@@ -158,8 +154,7 @@ include_once('pdo.php');
                <input type="submit" value="Inscrever-se" name="inscrever" id="inscrever" class="u-btn u-btn-submit u-button-style">                  				     
              </div>
              </form>
-             <div class="mostrar"></div>	  		
-            </div>			
+             
           </div>
         </div>
       </div>

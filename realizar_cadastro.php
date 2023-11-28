@@ -1,5 +1,5 @@
 <?php
-include_once('pdo.php');
+include('pdo.php');
 
 $nome = $_POST['nome'];
 $email = $_POST['email'];

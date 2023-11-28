@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "top.php";
+include ('topo.php');
 
 //se o usuário não estiver logado
 if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
@@ -49,8 +49,7 @@ $logado = $_SESSION['nome'];
                   <input id="submitb" type="submit" value="Enviar" class="u-btn u-btn-submit u-button-style">
   				        <input type='reset' value='Limpar' class="u-btn u-btn-submit u-button-style"/>          
                 </div>      
-         			</form>
-			
+         			</form>		
             </div>
             <div id="result" class="u-form-send-message u-form-send-success"></div>			
           </div>

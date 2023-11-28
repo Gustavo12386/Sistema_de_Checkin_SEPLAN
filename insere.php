@@ -1,10 +1,7 @@
 <?php
-
 extract($_POST); // Transforma em variável
 
-
 include('pdo.php');
-
 
 $rows = $conexao_pdo->query("SELECT max(id) FROM evento")->fetch();
 
@@ -16,22 +13,14 @@ else {
 }
 
 // Prepara o Insert
-$insere = $conexao_pdo->prepare("
-	INSERT INTO `bd_cheking`.`evento` (		
-		`nome`,
-		`data`,
-		`inicio`,
-		`fim`,
-		`organizador`,
-		`obs`,
-		`keypass`
-	) 
+$insere = $conexao_pdo->prepare("INSERT INTO evento(nome,data,inicio,fim,
+   organizador,obs,keypass) 
 	VALUES
 	( ?, ?, ?, ?, ?, ?, ?)
 ");
 
 // Insere
-$status = $insere->execute(	array($nome,$data,$inicio,$fim,$organizador,$obs,$keypass));
+$status = $insere->execute(array($nome,$data,$inicio,$fim,$organizador,$obs,$keypass));
 
 if ($status) {
 	

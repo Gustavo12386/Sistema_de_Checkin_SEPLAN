@@ -21,7 +21,7 @@
             <h3 class="u-text u-text-1">Cadastre seu Usuário</h3>
             <div class="u-form u-form-1">
               
-            <form class="enviar" action="realizar_cadastro.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">
+            <form action="realizar_cadastro.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">
             
                 <div class="u-form-group u-form-name u-label-top">
                   <label for="name-6715" class="u-label">Nome do Usuário:</label>

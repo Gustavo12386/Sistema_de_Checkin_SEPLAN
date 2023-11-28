@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include "top.php";
+include ('topo.php');
 
 //se o usuário não estiver logado
 if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))

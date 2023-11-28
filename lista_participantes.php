@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include "top3.php";
-include "pdo.php";
+include ('topo3.php');
+include ('pdo.php');
 //se o usuário não estiver logado
 if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
 {

@@ -1,7 +1,7 @@
 <?php
 session_start();
 extract($_GET); // Transforma em variável
-include_once('pdo.php');
+include('pdo.php');
 
 //se o usuário não estiver logado
 if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
@@ -13,7 +13,6 @@ if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
 //se o usuário estiver logado
 $logado = $_SESSION['nome'];
 
-//exit();
 include 'composer/vendor/autoload.php';
 
 use BaconQrCode\Renderer\ImageRenderer;
@@ -26,22 +25,14 @@ use BaconQrCode\Renderer\RendererStyle\Fill;
 // Configurações
 $tamanho = 450;
 $margem  = 5;
-//$cod = "apikey".md5($key);
 
 $renderer = new ImageRenderer(
     new RendererStyle($tamanho),
     new SvgImageBackEnd()
 );
 $writer = new Writer($renderer);
-//Exibe o QR code na tela
-//echo ($writer->writeString('http://www.seplan.ba.gov.br'));
-//$writer->writeFile('http://www.seplan.ba.gov.br', 'qrcode.png');
 
 ?>
-
-
-
-
 
 <table align="center" border="0">
 <tr>
@@ -63,16 +54,16 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
 <?php
   //Exibe nome do evento
   if(!empty($_GET['key'])){
-  $keypass = $_GET['key'];  
-  $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
-  $sql->bindparam(':keypass', $keypass);
-  $sql->execute(); 
+    $keypass = $_GET['key'];  
+    $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
+    $sql->bindparam(':keypass', $keypass);
+    $sql->execute(); 
 
-  if($sql->rowCount() > 0){
-   while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
-        echo "{$dados['nome']}";
-      }  
-    }
+    if($sql->rowCount() > 0){
+    while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
+          echo "{$dados['nome']}";
+        }  
+      }
   }  
 ?>
                 
