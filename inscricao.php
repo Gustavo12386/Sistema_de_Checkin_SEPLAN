@@ -80,7 +80,7 @@ include('pdo.php');
                 }   
              ?>
            <div class="u-fonte">  
-            <h3 class='fonte'>Preencha seus dados</h3>
+            <h4 class='fonte'>Preencha seus dados</h4>
            </div> 
            <br>
           <div class="u-form u-form-1">
@@ -162,8 +162,8 @@ include('pdo.php');
    <style>
     .tamanho2{
     width: 320px;
-    margin: 11px;
-    margin-top:20px;
+    margin-left: 29px;
+    margin-top: 20px;
     }
     .u-text-1{
       font-size: 30px;   
@@ -174,7 +174,19 @@ include('pdo.php');
     .menu{
     width:200px;
     height:38px;  
+    margin-left: 30px;
     }  
+    .u-border-1{     
+      margin-top: 6px;
+      width: 1200px;
+      margin-left: 30px;
+    }
+    .u-label{
+      margin-left: 30px;
+    }
+    #inscrever{
+      margin-left: 30px;
+    }
    </style> 
  </body>  
 </html>  

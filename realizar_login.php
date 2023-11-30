@@ -14,23 +14,28 @@ $sql->bindparam(':nome', $nome);
 $sql->bindparam(':senha', $senhamd5);
 $sql->execute();
 
+try{
 
-if($sql->rowCount() > 0)
-{
-   session_start(); 
-   $sql->fetch();  
-   $_SESSION['nome'] = $nome;
-   $_SESSION['senha'] = $senha;   
-   echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";
+    if($sql->rowCount() > 0)
+    {
+        session_start(); 
+        $sql->fetch();  
+        $_SESSION['nome'] = $nome;
+        $_SESSION['senha'] = $senha;   
+        echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";
+    }
+
+    else
+    {
+        $mensagem = "Usuario ou senha incorretos!";
+        echo "<script language='javascript'>";
+        echo "alert('".$mensagem."');";
+        echo "</script>";
+        echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
+    }
+
+} 
+catch(PDOException $e){
+  print "Erro: " . $e->getMessage();
 }
-
-else
-{
-    $mensagem = "Usuario ou senha incorretos!";
-    echo "<script language='javascript'>";
-    echo "alert('".$mensagem."');";
-    echo "</script>";
-    echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
-}
-
 ?>

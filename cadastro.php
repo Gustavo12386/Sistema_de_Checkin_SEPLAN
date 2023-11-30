@@ -17,12 +17,10 @@
     <section class="u-clearfix u-image u-section-3" src="" id="sec-e0b0" data-image-width="5760" data-image-height="3840">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-align-center u-container-style u-group u-opacity u-opacity-70 u-white u-group-1">
-          <div class="u-container-layout u-container-layout-1">
-            <h3 class="u-text u-text-1">Cadastre seu Usuário</h3>
-            <div class="u-form u-form-1">
-              
-            <form action="realizar_cadastro.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">
-            
+          <div class="u-container-layout u-container-layout-1">            
+            <div class="u-form u-form-1">              
+            <form action="realizar_cadastro.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">  
+            <h4 class="u-text u-text-1">Realizar Cadastro</h4>             
                 <div class="u-form-group u-form-name u-label-top">
                   <label for="name-6715" class="u-label">Nome do Usuário:</label>
                   <input type="text" placeholder="Digite o nome do usuário" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
@@ -47,6 +45,33 @@
         </div>
       </div>
     </section>
+<style>
+  .u-text-1{
+    font-size: 30px;
+    margin-top: 100px;  
+    bottom: 30px;
+    text-align: center; 
+  }
+  .u-container-layout{    
+    top: 10px;
+    right: 60px;    
+  } 
+  .u-label{
+    margin-left: 146px;
+  }
+  .u-border-1{
+    width: 78%;
+    margin-left: 146px;
+    margin-top: 6px;
+  }
+  #submit{
+    margin-left: 146px;
+  }
+  .u-logo-image-1{
+    margin: 0px auto 0 0;
+    margin-left: 95px;
+  }
+</style>     
 </html>  
  
   

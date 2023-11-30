@@ -1,22 +1,21 @@
-@media screen and (max-width : 1120px){
-    .u-button-style{
+@media (max-width : 1120px){
+    .u-form-submit #inscrever{
       width: 220px;
       height: 90px;
       font-size: 30px;
-      margin-left: 45px;  
+      margin-left: 48px;  
     }
-    .u-border-1{
-       width: 840px; 
+    .u-form-group .u-border-1{
+       width: 785px; 
        height: 78px;
-       margin-left: 45px;
-       margin-top: 12px;
+       margin-left: 47px;
+       margin-top: 18px;
        font-size: 35px;       
     }
-    .u-label{
+    .u-form-group .u-label{
        font-size: 35px;  
-       margin-left: 45px;  
-    }
-    
+       margin-left: 45px;
+    }    
     .u-header .tamanho2{
         width: 600px;
         margin-left: 65px;
@@ -30,9 +29,9 @@
     }
     .u-form-group .menu{            
      width: 362px;
-     height: 68px;
-     font-size: 28px;  
-     margin-left: 50px;  
+     height: 72px;
+     font-size: 30px;   
+     margin-left: 48px;  
     }  
     ::placeholder{
       font-size: 32px;  

@@ -23,21 +23,13 @@
   $sql->execute();
          
   //verfica se a inscrição foi realizada
-  if($sql->rowCount() > 0)
+  try
   {
-    echo "<script language='javascript' type='text/javascript'>window.location.href='confirmacao.php'</script>";   
-      // echo '<script>';
-      //   echo '$(document).ready(function(){
-      //  swal("Inscricao Realizada com Sucesso!","", "success");        
-      //  })';
-      //  echo'</script>';        
-  } else
+   echo "<script language='javascript' type='text/javascript'>window.location.href='confirmacao.php'</script>";       
+  }
+  catch(PDOException $e)
   {
-    echo '<script>';
-    echo '$(document).ready(function(){
-    swal("Ocorreu Um erro!","", "warning");        
-    })';
-    echo'</script>';
+   print "Erro: " . $e->getMessage();
   } 
 
 ?>

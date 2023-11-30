@@ -62,7 +62,7 @@ $result = $conexao_pdo->query($sql);
        } else {   
       ?> 
       <td><a href='qrcode.php?key=<?=$rows['keypass'] ?>' target="_blank"><img src="images/qrimg.png"  width='32px'></a></td>
-        <td><a href="editar_evento.php?editar=<?= $rows['id']?>"><img src="icons/1159633.png"  width='25px'>
+        <td><a href="editar_evento.php?editar=<?= $rows['id']?>"><img src="icons/1159633.png"  width='32px'>
         </a></td>
         <td><a class='btn btn-danger' href="deletar.php?deletar=<?= $rows['id']?>" onclick="return confirm('Deseja deletar o evento?')"><img src="icons/delete.png" width='25px'>
         </a></td>                           

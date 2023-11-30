@@ -16,14 +16,15 @@ $sql->bindParam(':senha', $senhamd5);
 $sql->execute();
 
 //verfica se os dados foram cadastrados
-if($sql->rowCount() > 0)
+try
 {
     $mensagem = "Cadastro Realizado com Sucesso!";
     echo "<script language='javascript'>";
     echo "alert('".$mensagem."');";
     echo "</script>";
     echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
-} else
+} 
+catch(PDOException)
 {
     echo '<script>';
     echo '$(document).ready(function(){
