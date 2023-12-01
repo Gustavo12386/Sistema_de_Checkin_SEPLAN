@@ -22,25 +22,30 @@
     $query->execute(); 
     
     //verifica se os dados foram atualizados
+ try
+ {  
     if($query->rowCount() > 0)
     {
-      $mensagem = "Evento Atualizado com Sucesso!";
-      echo "<script language='javascript'>";
-      echo "alert('".$mensagem."');";
-      echo "</script>";      
-      echo "<script language='javascript' type='text/javascript'>window.location.href='eventos.php'</script>";
-    } else if($query->rowCount() == 0){
-      echo "<script language='javascript' type='text/javascript'>window.location.href='eventos.php'</script>";
-    } else
+      echo '<script>';
+      echo '$(document).ready(function(){
+      swal("Evento Atualizado com Sucesso!","", "success").then(function(value){
+        if(value){        
+         window.location = "eventos.php"
+        }           
+      }); 
+    });';
+  echo'</script>';   
+    } 
+    else if($query->rowCount() == 0)
     {
-        echo '<script>';
-        echo '$(document).ready(function(){
-        swal("Ocorreu Um erro!","", "warning");        
-        })';
-        echo'</script>';
-      }  
-          
-
+      echo "<script language='javascript' type='text/javascript'>window.location.href='eventos.php'</script>";
+    }
+  } 
+  catch(PDOException $e)
+  {
+    print "Erro: " . $e->getMessage();
+  }
+      
 ?>
 
 

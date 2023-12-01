@@ -10,18 +10,18 @@ if(!empty($_GET['deletar']))
   $deletar->execute();
 
   //verfica se o campo foi deletado
+try
+{
   if($deletar->rowCount() > 0)
   {   
    echo "<script language='javascript' type='text/javascript'>window.location.href='eventos.php'</script>";     
   }
-  else
-  {
-   echo '<script>';
-   echo '$(document).ready(function(){
-   swal("Ocorreu Um erro!","", "warning");        
-   })';
-   echo'</script>';
-  } 
-}
+} 
+catch(PDOException $e)
+{
+  print "Erro: " . $e->getMessage();
 
+} 
+}
+ 
 ?>

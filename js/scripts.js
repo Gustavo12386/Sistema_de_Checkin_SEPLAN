@@ -86,9 +86,11 @@ $(function(){
 						//alert('Dados enviados com sucesso');						
 						//swal("Dados enviados com sucesso!");
 						
-						swal('Obrigado!', 'Evento cadastrado com sucesso!', 'success')
-						$('.enviar');
-
+						swal('Obrigado!', 'Evento cadastrado com sucesso!', 'success').then(function(clear){
+                          if(clear){
+                           $('.enviar')[0].reset()
+						  }
+						});					
 						
 					} else {
 						// Se não, apresenta o erro perto do botão de envio
@@ -110,4 +112,6 @@ $(function(){
 		return false;
 		
 	});
+
+	
 });

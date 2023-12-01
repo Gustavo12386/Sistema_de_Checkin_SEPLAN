@@ -24,12 +24,9 @@ try
     echo "</script>";
     echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
 } 
-catch(PDOException)
+catch(PDOException $e)
 {
-    echo '<script>';
-    echo '$(document).ready(function(){
-    swal("Ocorreu Um erro!","", "warning");        
-    })';
-    echo'</script>';  
+  print "Erro: " . $e->getMessage();
 }
+
 ?>

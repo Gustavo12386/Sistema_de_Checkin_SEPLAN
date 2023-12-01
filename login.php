@@ -56,7 +56,6 @@
     top: 10px;
     right: 60px;    
   } 
- 
   .u-label{
     margin-left: 146px;  
   }

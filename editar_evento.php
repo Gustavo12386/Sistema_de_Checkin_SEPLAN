@@ -57,8 +57,7 @@ $logado = $_SESSION['nome'];
             <h3 class="u-text u-text-1">Atualize seu evento</h3>
             <div class="u-form u-form-1">
               
-            <form id="formDados" action="editar.php" method="POST" style="padding: 15px;"  enctype="multipart/form-data">
-            
+            <form class="formulario" action="editar.php" method="POST" style="padding: 15px;"  enctype="multipart/form-data">            
                 <div class="u-form-group u-form-name u-label-top">
                   <label for="name-6715" class="u-label">Nome evento:</label>
                   <input type="text" placeholder="Digite o nome do evento" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" value="<?php echo $nome ?>">
@@ -86,8 +85,8 @@ $logado = $_SESSION['nome'];
                   <input id="submit" type="submit" name="update" value="Atualizar" class="u-btn u-btn-submit u-button-style">  				              
                 </div>      
          			</form>			
-            </div>			
-            
+               <div class="tela"></div>  
+            </div>            
           </div>
         </div>
       </div>

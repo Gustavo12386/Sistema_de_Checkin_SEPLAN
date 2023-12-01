@@ -153,8 +153,7 @@ include('pdo.php');
              <div class="u-align-left u-form-group u-form-submit u-label-top">                          
                <input type="submit" value="Inscrever-se" name="inscrever" id="inscrever" class="u-btn u-btn-submit u-button-style">                  				     
              </div>
-             </form>
-             
+             </form>                        
           </div>
         </div>
       </div>

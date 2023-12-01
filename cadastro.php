@@ -5,7 +5,11 @@
   <title>Cadastro</title>
   <link rel="stylesheet" href="css/nicepage.css" media="screen">	
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">     
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/scripts2.js"></script>     
+    <script src="js/sweet.js"></script>
+    <script src="js/nicepage.js"></script> 
 </head>
 
   <header class="u-clearfix u-header u-header" id="sec-a184"><div class="u-clearfix u-sheet u-sheet-1">
@@ -32,7 +36,7 @@
                 </div>
                 <br><br>
                 <div class="u-form-group u-form-name u-label-top">
-                  <label for="name-6715" class="u-label">Senha</label>
+                  <label for="name-6715" class="u-label">Senha:</label>
                   <input type="password" placeholder="Digite uma senha" id="senha" name="senha" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
                 </div>
                 <br><br>                
