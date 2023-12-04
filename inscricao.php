@@ -177,7 +177,7 @@ include('pdo.php');
     }  
     .u-border-1{     
       margin-top: 6px;
-      width: 1200px;
+      width: 86%;
       margin-left: 30px;
     }
     .u-label{

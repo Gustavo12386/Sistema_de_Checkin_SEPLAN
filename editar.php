@@ -26,15 +26,15 @@
  {  
     if($query->rowCount() > 0)
     {
-      echo '<script>';
-      echo '$(document).ready(function(){
-      swal("Evento Atualizado com Sucesso!","", "success").then(function(value){
-        if(value){        
-         window.location = "eventos.php"
-        }           
-      }); 
-    });';
-  echo'</script>';   
+        echo '<script>';
+        echo '$(document).ready(function(){
+        swal("Evento Atualizado com Sucesso!","", "success").then(function(value){
+          if(value){        
+          window.location = "eventos.php"
+          }           
+        }); 
+      });';
+      echo'</script>';   
     } 
     else if($query->rowCount() == 0)
     {

@@ -41,11 +41,12 @@ $logado = $_SESSION['nome'];
                 </div>                
                 <div class="u-form-group u-form-message u-label-top">
                   <label for="message-6715" class="u-label">Observações</label>
-                  <textarea  rows="4" cols="50" id="obs" name="obs" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" ></textarea>
+                  <textarea  rows="4"  cols="50" id="obs" name="obs" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></textarea>
+                  <label>Caracteres Restantes: <span class="caracteres">500</span></label> 
                 </div>
                 <br>
-                <div class="u-align-left u-form-group u-form-submit u-label-top">                 
-                  <input id="submitb" type="submit" value="Enviar" class="u-btn u-btn-submit u-button-style">
+                <div class="u-align-left u-form-group u-form-submit u-label-top">                               
+                  <input id="submitb" type="submit" value="Enviar" class="u-btn u-btn-submit u-button-style">                 
   				        <input type='reset' value='Limpar' class="u-btn u-btn-submit u-button-style"/>          
                 </div>      
          			</form>		
@@ -55,6 +56,11 @@ $logado = $_SESSION['nome'];
         </div>
       </div>
     </section>
+  <style>
+   .u-btn{
+    margin: 2px;
+   }
+  </style>
   
  
   
