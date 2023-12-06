@@ -5,9 +5,11 @@
   <title>Login</title>
   <link rel="stylesheet" href="css/nicepage.css" media="screen">
   <script src="js/jquery-1.11.1.min.js"></script>
-  <script src="js/scripts.js"></script>
+  <script src="js/erro.js"></script>
   <script src="js/sweet.js"></script>
-  <script src="js/nicepage.js"></script>	 
+  <script src="js/nicepage.js"></script>	
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>     
   <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">     
 </head>
@@ -23,22 +25,23 @@
         <div class="u-align-center u-container-style u-group u-opacity u-opacity-70 u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">                 
             <div class="u-form u-form-1">          
-              <form action="realizar_login.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">
+              <form class="erro" action="realizar_login.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">
               <h4 class="u-text u-text-1">Fazer Login</h4>                             
                   <div class="u-form-group u-form-name u-label-top">                   
                     <label for="name-6715" class="u-label">Nome do Usuário:</label>
                     <input type="text" placeholder="Digite o nome do usuário" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
                   </div>
-                  <br><br>                
+                  <br>              
                   <div class="u-form-group u-form-name u-label-top">
                     <label for="name-6715" class="u-label">Senha:</label>
                     <input type="password" placeholder="Digite uma senha" id="senha" name="senha" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
                   </div>
-                  <br><br>                               
+                  <br>                          
                   <div class="u-align-left u-form-group u-form-submit u-label-top">                 
                     <input id="submitb" type="submit" value="Acessar" name="acesso" class="u-btn u-btn-submit u-button-style">  				     
                   </div>               
-             </form>	  		
+             </form>	  
+             <div class="mensagem"></div>  		
             </div>			
           </div>
         </div>
@@ -62,10 +65,11 @@
   .u-input{
     width: 78%;
     margin-left: 146px;
-    margin-top: 10px;
+    margin-top: 5px;
   }
   #submitb{
     margin-left: 146px;
+    margin-top: 10px;
   }
   .u-header .u-image-1{
     margin: 22px auto 0 0;

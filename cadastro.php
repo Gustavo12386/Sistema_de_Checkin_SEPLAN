@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-br">
 <head>  
@@ -5,9 +6,11 @@
   <title>Cadastro</title>
   <link rel="stylesheet" href="css/nicepage.css" media="screen">	
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">    
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>    
     <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/scripts2.js"></script>     
+    <script src="js/cadastro.js"></script>     
     <script src="js/sweet.js"></script>
     <script src="js/nicepage.js"></script> 
 </head>
@@ -23,27 +26,28 @@
         <div class="u-align-center u-container-style u-group u-opacity u-opacity-70 u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">            
             <div class="u-form u-form-1">              
-            <form action="realizar_cadastro.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">  
+            <form class="cadastro" action="realizar_cadastro.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">  
             <h4 class="u-text u-text-1">Realizar Cadastro</h4>             
                 <div class="u-form-group u-form-name u-label-top">
                   <label for="name-6715" class="u-label">Nome do Usuário:</label>
                   <input type="text" placeholder="Digite o nome do usuário" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
                 </div>
-                <br><br>
+                <br>
                 <div class="u-form-group u-form-name u-label-top">
                   <label for="name-6715" class="u-label">E-mail:</label>
                   <input type="text" placeholder="Digite o e-mail" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
                 </div>
-                <br><br>
+                <br>
                 <div class="u-form-group u-form-name u-label-top">
                   <label for="name-6715" class="u-label">Senha:</label>
                   <input type="password" placeholder="Digite uma senha" id="senha" name="senha" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
                 </div>
-                <br><br>                
+                <br>           
                 <div class="u-align-left u-form-group u-form-submit u-label-top">                 
                   <input id="submit" type="submit" value="Cadastrar" name="cadastrar" class="u-btn u-btn-submit u-button-style">  				     
                 </div>                
              </form>	  		
+             <div class="success"></div>  	 
             </div>			
           </div>
         </div>
@@ -57,7 +61,7 @@
     text-align: center; 
   }
   .u-container-layout{    
-    top: 10px;
+    top: 5px;
     right: 60px;    
   } 
   .u-label{
@@ -66,10 +70,11 @@
   .u-border-1{
     width: 78%;
     margin-left: 146px;
-    margin-top: 6px;
+    margin-top: 5px;
   }
   #submit{
     margin-left: 146px;
+    margin-top: 10px;
   }
   .u-logo-image-1{
     margin: 0px auto 0 0;

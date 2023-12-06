@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include('pdo.php');
 
 $nome = addslashes($_POST['nome']);
@@ -18,7 +18,7 @@ try{
 
     if($sql->rowCount() > 0)
     {
-        session_start(); 
+        
         $sql->fetch();  
         $_SESSION['nome'] = $nome;
         $_SESSION['senha'] = $senha;   
@@ -27,11 +27,11 @@ try{
 
     else
     {
-        $mensagem = "Usuario ou senha incorretos!";
-        echo "<script language='javascript'>";
-        echo "alert('".$mensagem."');";
-        echo "</script>";
-        echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
+      echo '<script>';
+      echo '$(document).ready(function(){
+      swal("Usuario ou senha incorretos!","", "warning") 
+      });';
+      echo'</script>';  
     }
 
 } 

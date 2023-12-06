@@ -18,15 +18,23 @@ $sql->execute();
 //verfica se os dados foram cadastrados
 try
 {
-    $mensagem = "Cadastro Realizado com Sucesso!";
-    echo "<script language='javascript'>";
-    echo "alert('".$mensagem."');";
-    echo "</script>";
-    echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
+  echo '<script>';
+  echo '$(document).ready(function(){
+  swal("Cadastro Realizado com Sucesso!","", "success").then(function(value){
+    if(value){        
+    window.location = "login.php"
+    }           
+  });  
+  });';
+  echo'</script>';  
 } 
 catch(PDOException $e)
 {
   print "Erro: " . $e->getMessage();
 }
-
+//   $mensagem = "Cadastro Realizado com Sucesso!";
+ //   echo "<script language='javascript'>";
+ //   echo "alert('".$mensagem."');";
+ //   echo "</script>";
+ //   echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
 ?>

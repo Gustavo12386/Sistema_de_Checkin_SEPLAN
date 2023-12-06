@@ -8,9 +8,9 @@ $(function (){
 			 $('.tela').html(data);			 
 		 }
 	  });
-	  return false;
-	}); 
- });
+    return false;
+  }); 
+});
 
 	
  
