@@ -53,13 +53,19 @@ if(!empty($_GET['lista'])){
 </tr>
 </table>
 <style>
-@media print{
- #botao2 { display:none; }   
-@page{
+@media print
+{
+ #botao2
+ {
+  display:none;
+ }   
+@page
+{
   size: landscape;
 }
 }
-#botao2{  
+#botao2
+{  
   background-color: #232b79;
   border-width: 0px; 
   color: white;
@@ -69,10 +75,12 @@ if(!empty($_GET['lista'])){
   cursor: pointer;
   margin: 0 18px;
 }
-#botao2:hover{
+#botao2:hover
+{
   background-color: #20286E;
 }
-.tamanho{
+.tamanho
+{
   width: 300px;
 } 
 </style>

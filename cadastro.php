@@ -54,29 +54,35 @@
       </div>
     </section>
 <style>
-  .u-text-1{
+  .u-text-1
+  {
     font-size: 30px;
     margin-top: 100px;  
     bottom: 30px;
     text-align: center; 
   }
-  .u-container-layout{    
+  .u-container-layout
+  {    
     top: 5px;
     right: 60px;    
   } 
-  .u-label{
+  .u-label
+  {
     margin-left: 146px;
   }
-  .u-border-1{
+  .u-border-1
+  {
     width: 78%;
     margin-left: 146px;
     margin-top: 5px;
   }
-  #submit{
+  #submit
+  {
     margin-left: 146px;
     margin-top: 10px;
   }
-  .u-logo-image-1{
+  .u-logo-image-1
+  {
     margin: 0px auto 0 0;
     margin-left: 95px;
   }

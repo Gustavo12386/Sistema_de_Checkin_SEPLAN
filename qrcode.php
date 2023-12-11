@@ -93,10 +93,15 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
 </tr>
 </table>
 <style>
-@media print{
- #botao { display:none; }
+@media print
+{
+ #botao
+ {
+  display:none; 
+ }
 }  
-#botao{  
+#botao
+{  
   background-color: #232b79;
   border-width: 0px; 
   color: white;
@@ -104,7 +109,8 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
   height: 35px;
   cursor: pointer;
 }
-#botao:hover{
+#botao:hover
+{
   background-color: #20286E;
 }
 </style>

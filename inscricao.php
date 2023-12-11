@@ -159,31 +159,38 @@ include('pdo.php');
       </div>
     </section>
    <style>
-    .tamanho2{
+    .tamanho2
+    {
     width: 320px;
     margin-left: 29px;
     margin-top: 20px;
     }
-    .u-text-1{
+    .u-text-1
+    {
       font-size: 30px;   
     }
-    .fonte{
+    .fonte
+    {
     font-size: 35px;  
     }
-    .menu{
+    .menu
+    {
     width:200px;
     height:38px;  
     margin-left: 30px;
     }  
-    .u-border-1{     
+    .u-border-1
+    {     
       margin-top: 6px;
       width: 86%;
       margin-left: 30px;
     }
-    .u-label{
+    .u-label
+    {
       margin-left: 30px;
     }
-    #inscrever{
+    #inscrever
+    {
       margin-left: 30px;
     }
    </style> 

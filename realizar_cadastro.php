@@ -32,9 +32,5 @@ catch(PDOException $e)
 {
   print "Erro: " . $e->getMessage();
 }
-//   $mensagem = "Cadastro Realizado com Sucesso!";
- //   echo "<script language='javascript'>";
- //   echo "alert('".$mensagem."');";
- //   echo "</script>";
- //   echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
+
 ?>

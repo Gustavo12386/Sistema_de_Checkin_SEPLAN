@@ -21,7 +21,8 @@ $result = $conexao_pdo->query($sql);
       $date_now = date("Y-m-d");
       date_default_timezone_set("America/Bahia");
       $hora = date("H:i:s");      
-      while($rows = $result->fetch(PDO::FETCH_ASSOC)) { 
+      while($rows = $result->fetch(PDO::FETCH_ASSOC))
+      { 
           $data = $rows['data'];
           $inicio = $rows['inicio'];
           $fim = $rows['fim'];  
@@ -32,7 +33,8 @@ $result = $conexao_pdo->query($sql);
            <td style="text-align: justify;"><a href='lista_participantes.php?lista=<?=$rows['id'] ?>'>Visualizar</a></td>
            <td style="text-align: justify;"><a href='inscricao.php?keypass=<?=$rows['keypass'] ?>'>Link Inscrição</a></td>           
         <?php
-        if($date_now == $data and $hora > $inicio and $hora < $fim) {
+        if($date_now == $data and $hora > $inicio and $hora < $fim)
+        {
         ?>   
         <td><a class='btn btn-secondary' href='#' ><img src="images/qrimg.png"  width='25px'></a></td>
          <td><a class='btn btn-secondary' href="#"><img src="icons/1159633.png"  width='25px'>
@@ -41,7 +43,7 @@ $result = $conexao_pdo->query($sql);
          </a></td>
          </tr> 
        <?php 
-        } else if($date_now == $data and $hora > $fim) {      
+        } else if($date_now == $data and $hora > $fim){      
        ?>           
        <td><a class='btn btn-secondary' href='#'><img src="images/qrimg.png"  width='25px'></a></td>
         <td><a class='btn btn-secondary' href="#"><img src="icons/1159633.png"  width='25px'>
@@ -50,7 +52,7 @@ $result = $conexao_pdo->query($sql);
         </a></td>                           
       </tr>
       <?php 
-       } else if($date_now > $data) {     
+       } else if($date_now > $data){     
       ?> 
         <td><a class='btn btn-secondary' href='#'><img src="images/qrimg.png"  width='25px'></a></td>
         <td><a class='btn btn-secondary' href="#"><img src="icons/1159633.png"  width='25px'>
@@ -59,7 +61,7 @@ $result = $conexao_pdo->query($sql);
         </a></td>                           
       </tr>
       <?php
-       } else {   
+       } else{   
       ?> 
       <td><a href='qrcode.php?key=<?=$rows['keypass'] ?>' target="_blank"><img src="images/qrimg.png" width='32px'></a></td>
         <td><a href="editar_evento.php?editar=<?= $rows['id']?>"><img src="icons/1159633.png"  width='32px'>

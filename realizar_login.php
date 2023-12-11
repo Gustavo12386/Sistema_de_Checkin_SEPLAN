@@ -14,15 +14,15 @@ $sql->bindparam(':nome', $nome);
 $sql->bindparam(':senha', $senhamd5);
 $sql->execute();
 
-try{
+try
+{
 
     if($sql->rowCount() > 0)
-    {
-        
-        $sql->fetch();  
-        $_SESSION['nome'] = $nome;
-        $_SESSION['senha'] = $senha;   
-        echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";
+    {        
+      $sql->fetch();  
+      $_SESSION['nome'] = $nome;
+      $_SESSION['senha'] = $senha;   
+      echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";
     }
 
     else
@@ -35,7 +35,8 @@ try{
     }
 
 } 
-catch(PDOException $e){
+catch(PDOException $e)
+{
   print "Erro: " . $e->getMessage();
 }
 ?>

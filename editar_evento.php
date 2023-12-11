@@ -15,8 +15,8 @@ $logado = $_SESSION['nome'];
 
 <?php
  //listar eventos
- if(!empty($_GET['editar'])){
-
+ if(!empty($_GET['editar']))
+ {
   $id = $_GET['editar']; 
   $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE id=:id");
   $sql->bindparam(':id', $id);

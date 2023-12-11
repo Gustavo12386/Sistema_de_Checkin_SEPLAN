@@ -29,7 +29,8 @@
       </div>
     </section>
 <style>
-  .tamanho2{
+  .tamanho2
+  {
     width: 325px;
     margin-left: 30px;
   }  
