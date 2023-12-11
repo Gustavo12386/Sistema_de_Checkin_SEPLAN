@@ -57,7 +57,8 @@ $logado = $_SESSION['nome'];
             <h3 class="u-text u-text-1">Atualize seu evento</h3>
             <div class="u-form u-form-1">
               
-            <form class="formulario" action="editar.php" method="POST" style="padding: 15px;"  enctype="multipart/form-data">            
+            <form class="formulario" action="editar.php" method="POST" style="padding: 15px;"  enctype="multipart/form-data">  
+                <input type="hidden" name="id" value="<?php echo $id?>">            
                 <div class="u-form-group u-form-name u-label-top">
                   <label for="name-6715" class="u-label">Nome evento:</label>
                   <input type="text" placeholder="Digite o nome do evento" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" value="<?php echo $nome ?>">
@@ -77,11 +78,11 @@ $logado = $_SESSION['nome'];
                 </div>                
                 <div class="u-form-group u-form-message u-label-top">
                   <label for="message-6715" class="u-label">Observações</label>
-                  <textarea  rows="4" cols="50" id="obs" name="obs" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><?php echo $obs ?></textarea>
+                  <textarea  rows="4" cols="50" maxlength="220" id="obs" name="obs" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"><?php echo $obs?></textarea>
+                  <label>Caracteres Restantes: <span class="carac">220</span></label> 
                 </div>    
                 <br>            
-                <div class="u-align-left u-form-group u-form-submit u-label-top">
-                  <input type="hidden" name="id" value="<?php echo $id?>">                             
+                <div class="u-align-left u-form-group u-form-submit u-label-top">                                             
                   <input id="submit" type="submit" name="update" value="Atualizar" class="u-btn u-btn-submit u-button-style">  				              
                 </div>      
          			</form>			

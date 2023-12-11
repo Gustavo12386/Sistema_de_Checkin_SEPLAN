@@ -103,27 +103,27 @@ include('pdo.php');
              ?>                          
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Nome:</label>
-               <input type="text" placeholder="Digite seu nome" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+               <input type="text" placeholder="Digite seu nome" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
               </div>
               <br><br>  
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">RG:</label>
-               <input type="text" placeholder="Digite seu rg" id="rg" name="rg" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+               <input type="text" placeholder="Digite seu rg" id="rg" name="rg" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
               </div>
               <br><br> 
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">CPF:</label>
-               <input type="text" placeholder="Digite seu cpf" id="cpf" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+               <input type="text" placeholder="Digite seu cpf" id="cpf" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
               </div>
               <br><br>             
               <div class="u-form-group u-form-name u-label-top">
                 <label for="name-6715" class="u-label">Email:</label>
-                <input type="text" placeholder="Digite seu email" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                <input type="text" placeholder="Digite seu email" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
               </div>
               <br><br>
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Telefone:</label>
-               <input type="text" placeholder="Digite seu telefone" id="telefone" name="telefone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+               <input type="text" placeholder="Digite seu telefone" id="telefone" name="telefone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
                <br>              
                <label for="name-6715" class="u-label">Selecione seu Órgão:</label>
               </div>
@@ -147,7 +147,7 @@ include('pdo.php');
              <br><br> 
              <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Cargo:</label>
-               <input type="text" placeholder="Digite seu cargo" id="cargo" name="cargo" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+               <input type="text" placeholder="Digite seu cargo" id="cargo" name="cargo" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
               </div>
               <br><br>                              
              <div class="u-align-left u-form-group u-form-submit u-label-top">                          

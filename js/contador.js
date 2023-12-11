@@ -4,4 +4,5 @@ $(document).on("input", "#obs", function () {
     var caracteresRestantes = limite - caracteresDigitados;
 
     $(".carac").text(caracteresRestantes);
+    
 });
