@@ -45,10 +45,10 @@ include('pdo.php');
                 $hora = date("H:i:s");  
                 if($date_now == $data and $hora > $fim)
                 {
-                echo "<script language='javascript' type='text/javascript'>window.location.href='mensagem.php'</script>";  
+                 header("Location: mensagem.php");   
                 } else if($date_now > $data)
                 {
-                echo "<script language='javascript' type='text/javascript'>window.location.href='mensagem.php'</script>";
+                 header("Location: mensagem.php");   
                 }
               ?>  
            <br><br>           

@@ -1,6 +1,6 @@
-<?php
+<?php  
   include('pdo.php');   
- 
+  
   $id_evento = $_POST['id'];
   $nome = $_POST['nome'];
   $rg = $_POST['rg'];
@@ -24,9 +24,9 @@
          
   //verfica se a inscrição foi realizada
   try
-  {
-   echo "<script language='javascript' type='text/javascript'>window.location.href='confirmacao.php'</script>";       
-  }
+  {    
+   header("Location: confirmacao.php");     
+  }  
   catch(PDOException $e)
   {
    print "Erro: " . $e->getMessage();

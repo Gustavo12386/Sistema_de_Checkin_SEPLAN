@@ -1,6 +1,7 @@
 <?php
 session_start();
 extract($_GET); // Transforma em variável
+include('topo4.php');
 include('pdo.php');
 
 //se o usuário não estiver logado
@@ -38,13 +39,13 @@ $writer = new Writer($renderer);
 <tr>
 <td align="center">
 <div>
-CHECKING SEPLAN
+<h5 class="u-text u-text-1 texto-1">CHECKING SEPLAN</h5>
 </div>
 </td>
 </tr>
 <tr>
 <td align="center">
-CONFIRME AQUI A SUA PARTICIPAÇÃO
+<h5 class="u-text u-text-1 texto-2">CONFIRME AQUI A SUA PARTICIPAÇÃO</h5>
 </td>
 </tr>
 <tr>
@@ -61,7 +62,7 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
 
     if($sql->rowCount() > 0){
     while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
-          echo "{$dados['nome']}";
+          echo "<h5 class='u-text u-text-1 texto-3 u-text-palette-2-base'>{$dados['nome']}</h5>";
         }  
       }
   }  
@@ -78,7 +79,7 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
 </tr>
 <tr>
 <td align="center">
- <img src="images/logo-seplan-1.png" width="50%" /> 
+ <img class="logo" src="images/logo-seplan-1.png" width="50%" /> 
 </td>
 </tr>
 <tr>
@@ -97,7 +98,11 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
 {
  #botao
  {
-  display:none; 
+  display: none; 
+ }
+ .u-text-palette-2-base
+ {
+  color: #cf353b;
  }
 }  
 #botao
@@ -108,9 +113,24 @@ CONFIRME AQUI A SUA PARTICIPAÇÃO
   width: 100px;
   height: 35px;
   cursor: pointer;
+  margin-right: 5px;
+  margin-bottom: 10px;  
+  font-size: 16px;
 }
 #botao:hover
 {
   background-color: #20286E;
+}
+.logo
+{
+  margin-bottom: -7px;
+}
+.texto-1
+{
+  margin-top: 70px;
+}
+.texto-3
+{
+  margin-bottom: -24px;
 }
 </style>

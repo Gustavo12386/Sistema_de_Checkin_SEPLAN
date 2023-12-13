@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="u-clearfix u-header u-header" id="sec-a184"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="index.php" class="u-image u-logo u-image-1" data-image-width="275" data-image-height="37" title="Home">
+        <a href="#" class="u-image u-logo u-image-1" data-image-width="275" data-image-height="37" title="Home">
         <img src="images/logo-seplan-1.png" class="tamanho2">
         </a>         
     </header>

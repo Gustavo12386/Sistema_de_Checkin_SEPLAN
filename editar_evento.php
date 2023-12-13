@@ -39,16 +39,19 @@ $logado = $_SESSION['nome'];
     $hora = date("H:i:s");  
     if($date_now == $data and $hora > $inicio and $hora < $fim)
     {
-    echo "<script language='javascript' type='text/javascript'>window.location.href='eventos.php'</script>";  
+      header("Location: eventos.php");    
     } else if($date_now == $data and $hora > $fim)
     {
-      echo "<script language='javascript' type='text/javascript'>window.location.href='eventos.php'</script>";
+      header("Location: eventos.php");   
     } else if($date_now > $data)
     {
-      echo "<script language='javascript' type='text/javascript'>window.location.href='eventos.php'</script>";
+      header("Location: eventos.php");   
     }
-
-}   
+ }
+ else
+ {
+  header('Location: eventos.php');
+ }   
 ?>
     <section class="u-clearfix u-image u-section-3" src="" id="sec-e0b0" data-image-width="5760" data-image-height="3840">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">

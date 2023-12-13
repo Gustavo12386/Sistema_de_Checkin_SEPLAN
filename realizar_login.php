@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('pdo.php');
 
 $nome = addslashes($_POST['nome']);
@@ -19,6 +18,7 @@ try
 
     if($sql->rowCount() > 0)
     {        
+      session_start();
       $sql->fetch();  
       $_SESSION['nome'] = $nome;
       $_SESSION['senha'] = $senha;   
