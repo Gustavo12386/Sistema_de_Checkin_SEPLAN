@@ -4,12 +4,13 @@
       height: 90px;
       font-size: 30px;
       margin-left: 48px;  
+      margin-top: 4px;
     }
     .u-form-group .u-border-1{
        width: 785px; 
        height: 78px;
-       margin-left: 47px;
-       margin-top: 18px;
+       margin-left: 45px;
+       margin-top: 8px;
        font-size: 35px;       
     }
     .u-form-group .u-label{
@@ -22,10 +23,25 @@
         margin-top: 50px;
     } 
     .div-texto .u-text-1{
-     font-size: 50px;   
+     font-size: 48px;   
+    }
+    .div-texto .texto-4{
+      font-size: 40px;  
+    }
+    .div-texto .texto-5{
+      font-size: 40px;  
+    }
+    .div-texto .texto-3{
+      font-size: 50px;  
+    }
+    .div-texto .texto-1{
+      font-size: 50px;  
+    }
+    .div-texto .texto-2{
+      font-size: 44px;
     }
     .u-fonte .fonte{
-     font-size: 60px;  
+     font-size: 53px;  
     }
     .u-form-group .menu{            
      width: 362px;
