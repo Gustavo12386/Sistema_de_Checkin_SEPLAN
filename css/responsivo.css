@@ -4,7 +4,7 @@
       height: 90px;
       font-size: 30px;
       margin-left: 48px;  
-      margin-top: 4px;
+      margin-top: 8px;
     }
     .u-form-group .u-border-1{
        width: 785px; 
@@ -39,10 +39,7 @@
     }
     .div-texto .texto-2{
       font-size: 44px;
-    }
-    .u-fonte .fonte{
-     font-size: 53px;  
-    }
+    }    
     .u-form-group .menu{            
      width: 362px;
      height: 72px;

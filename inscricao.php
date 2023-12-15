@@ -14,8 +14,9 @@ include('pdo.php');
 </head>
 <body>  
 <div class="u-clearfix u-sheet u-sheet-1">
+<br>  
 <header class="u-clearfix u-header u-header" id="sec-a184">
-        <a href="index.php" title="Home">
+        <a href="#" title="Home">
           <img src="images/logo-seplan-1.png" class="tamanho2">
         </a>         
 	</header>       
@@ -77,22 +78,17 @@ include('pdo.php');
                       <h4 class="u-text u-text-1 texto-4">Data: <?php echo $data;?></h4>
                       <h4 class="u-text u-text-1 texto-5">Horário: <?php echo date('h:i', strtotime($inicio)); ?>
                       às <?php echo date('h:i', strtotime($fim)); ?></h4>
-                      <br><br>
+                      <br>
                     </div>  
                    <?php   
                     }
                   }                               
                 }   
-             ?>
-           <div class="u-fonte">  
-            <h4 class='fonte'>Preencha seus dados</h4>
-           </div> 
-           <br>
-          <div class="u-form u-form-1">
-                              
+             ?>         
+          <div class="u-form u-form-1">                              
           <form action="realizar_inscricao.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">            
              <?php
-              //exibe id da tabela evento para a conexão com a tabela evento por meio da chave estrangeira
+              //exibe id da tabela evento para a conexão com a tabela paricipantes por meio da chave estrangeira
               if(!empty($_GET['keypass'])){
                 $key = $_GET['keypass'];
                 $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
@@ -110,20 +106,15 @@ include('pdo.php');
                <label for="name-6715" class="u-label">Nome:</label>
                <input type="text" placeholder="Digite seu nome" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
               </div>
-              <br>
-              <div class="u-form-group u-form-name u-label-top">
-               <label for="name-6715" class="u-label">RG:</label>
-               <input type="text" placeholder="Digite seu rg" id="rg" name="rg" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
-              </div>
-              <br>
+              <br>             
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">CPF:</label>
-               <input type="text" placeholder="Digite seu cpf" id="cpf" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
+               <input type="text" placeholder="Digite seu cpf" id="cpf" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
               </div>
               <br>       
               <div class="u-form-group u-form-name u-label-top">
                 <label for="name-6715" class="u-label">Email:</label>
-                <input type="text" placeholder="Digite seu email" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
+                <input type="email" placeholder="Digite seu email" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
               </div>
               <br>
               <div class="u-form-group u-form-name u-label-top">
@@ -188,11 +179,7 @@ include('pdo.php');
     .texto-5
     {
       font-size: 29px;
-    }
-    .fonte
-    {
-    font-size: 38px;  
-    }
+    }    
     .menu
     {
     width:200px;
