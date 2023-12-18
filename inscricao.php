@@ -1,5 +1,8 @@
 <?php
 include('pdo.php');
+if(empty($_GET['keypass'])){
+  echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";
+}
 ?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-br">
@@ -10,9 +13,14 @@ include('pdo.php');
   <link rel="stylesheet" href="css/responsivo.css?<?php echo rand(1, 1000);?>"> 
   <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">     
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="js/jquery-1.11.1.min.js"></script>     
+  <script src="js/sweet.js"></script>
+  <script src="js/nicepage.js"></script>  
+  <script type="text/javascript" src="js/mascara.js"></script>
 </head>
 <body>  
+
 <div class="u-clearfix u-sheet u-sheet-1">
 <br>  
 <header class="u-clearfix u-header u-header" id="sec-a184">
@@ -23,39 +31,8 @@ include('pdo.php');
     <section class="u-clearfix u-image u-section-3" src="" id="sec-e0b0" data-image-width="5760" data-image-height="3840">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-align-center u-container-style u-group u-opacity u-opacity-70 u-white u-group-1">
-          <div class="u-container-layout u-container-layout-1">
-          <?php
-              // Determina um periodo que o formulário de inscrição ficará disponível
-              if(!empty($_GET['keypass'])){
-                $key = $_GET['keypass'];
-                $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
-                $sql->bindparam(':keypass', $key);
-                $sql->execute(); 
-
-                  if($sql->rowCount() > 0)
-                  {
-                  while($dados = $sql->fetch(PDO::FETCH_ASSOC))
-                    { 
-                    $data = $dados['data'];
-                    $inicio = $dados['inicio'];
-                    $fim = $dados['fim'];                               
-                    }
-                  }
-                  $date_now = date("Y-m-d");
-                  date_default_timezone_set("America/Bahia");
-                  $hora = date("H:i:s");  
-                  if($date_now == $data and $hora > $fim)
-                  {
-                   header("Location: mensagem.php");   
-                  } else if($date_now > $data)
-                  {
-                   header("Location: mensagem.php");   
-                  }
-                } else {
-                  header("Location: mensagem2.php");  
-                }             
-              ?>  
-           <br><br>           
+          <div class="u-container-layout u-container-layout-1">  
+          <br><br>                
            <?php
                 //exibe informações do evento
                 if(!empty($_GET['keypass'])){
@@ -84,9 +61,39 @@ include('pdo.php');
                     }
                   }                               
                 }   
-             ?>         
-          <div class="u-form u-form-1">                              
-          <form action="realizar_inscricao.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">            
+             ?>             
+             <?php
+              // Determina um periodo que o formulário de inscrição ficará disponível
+              if(!empty($_GET['keypass'])){
+                $key = $_GET['keypass'];
+                $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
+                $sql->bindparam(':keypass', $key);
+                $sql->execute(); 
+
+                  if($sql->rowCount() > 0)
+                  {
+                  while($dados = $sql->fetch(PDO::FETCH_ASSOC))
+                    { 
+                    $data = $dados['data'];
+                    $inicio = $dados['inicio'];
+                    $fim = $dados['fim'];                               
+                    }
+                  }
+                  $date_now = date("Y-m-d");
+                  date_default_timezone_set("America/Bahia");
+                  $hora = date("H:i:s");  
+                  if($date_now == $data and $hora > $fim)
+                  {
+                   header("Location: mensagem.php");   
+                  } else if($date_now > $data)
+                  {
+                   header("Location: mensagem.php");   
+                  }
+                }             
+              ?>  
+            
+          <div class="u-form u-form-1">         
+          <form class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;">            
              <?php
               //exibe id da tabela evento para a conexão com a tabela paricipantes por meio da chave estrangeira
               if(!empty($_GET['keypass'])){
@@ -109,7 +116,7 @@ include('pdo.php');
               <br>             
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">CPF:</label>
-               <input type="text" placeholder="Digite seu cpf" id="cpf" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+               <input type="text" placeholder="Digite seu cpf"  maxlength="14" id="cpf" name="cpf" autocomplete="off" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
               </div>
               <br>       
               <div class="u-form-group u-form-name u-label-top">
@@ -152,7 +159,7 @@ include('pdo.php');
           </div>
         </div>
       </div>
-    </section>
+    </section>    
    <style>
     .tamanho2
     {
@@ -202,7 +209,7 @@ include('pdo.php');
       margin-left: 30px;
     }
    </style> 
- </body>  
+ </body> 
 </html>  
  
   

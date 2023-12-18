@@ -4,8 +4,7 @@
           <tr>
             <td class="d-print-none">ID_Evento</td>            
             <td>N°Inscrição</td>            
-            <td>Nome</td>
-            <td>RG</td>
+            <td>Nome</td>           
             <td>CPF</td>
             <td>Email</td>
             <td>Telefone</td>            
@@ -27,8 +26,7 @@ if(!empty($_GET['lista'])){
        <tr>
        <td class="d-print-none"> <?=$rows['id'] ?></td>        
            <td> <?=$rows['id_participante'] ?></td>
-           <td> <?=$rows['nome'] ?></td>
-           <td> <?=$rows['rg'] ?></td>
+           <td> <?=$rows['nome'] ?></td>           
            <td> <?=$rows['cpf'] ?></td>
            <td> <?=$rows['email'] ?></td>
            <td> <?=$rows['telefone'] ?></td>           

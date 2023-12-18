@@ -1,3 +1,8 @@
+<?php
+ if(empty($_GET['keypass'])){
+  echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";
+ }
+?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-br">
 <head>
@@ -6,7 +11,7 @@
     <title>Evento Realizado</title>
     <link rel="stylesheet" href="css/nicepage.css" media="screen">   
   <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-  <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">     
+  <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">   
 </head>
 <body>
     <header class="u-clearfix u-header u-header" id="sec-a184"><div class="u-clearfix u-sheet u-sheet-1">
@@ -21,9 +26,9 @@
           <div class="u-container-layout u-container-layout-1">              
             <?php
             echo '<br><br><br>';
-            echo '<h3 class="u-text u-text-1">Inscrição Realizada com Sucesso!</h3>';           
+            echo '<h3 class="u-text u-text-1 confirmacao">Inscrição Realizada com Sucesso!</h3>';                      
             ?>                  
-            </div>			
+          </div>			
           </div>
         </div>
       </div>
@@ -33,7 +38,10 @@
   {
     width: 325px;
     margin-left: 30px;
-  }  
+  } 
+  .confirmacao{
+    color: #3BAC42;
+  } 
 </style>
 </body>
 </html>

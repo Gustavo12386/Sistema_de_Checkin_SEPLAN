@@ -35,7 +35,7 @@
                 <br>
                 <div class="u-form-group u-form-name u-label-top">
                   <label for="name-6715" class="u-label">E-mail:</label>
-                  <input type="text" placeholder="Digite o e-mail" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
+                  <input type="email" placeholder="Digite o e-mail" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
                 </div>
                 <br>
                 <div class="u-form-group u-form-name u-label-top">
