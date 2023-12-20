@@ -39,7 +39,7 @@ $writer = new Writer($renderer);
 <tr>
 <td align="center">
 <div>
-<h5 class="u-text u-text-1 texto-1">CHECKING SEPLAN</h5>
+<h5 class="u-text u-text-1 texto-1">CHECKIN SEPLAN</h5>
 </div>
 </td>
 </tr>
@@ -62,9 +62,14 @@ $writer = new Writer($renderer);
 
     if($sql->rowCount() > 0){
     while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
-          echo "<h5 class='u-text u-text-1 texto-3 u-text-palette-2-base'>{$dados['nome']}</h5>";
-        }  
-      }
+      $nome = $dados['nome'];        
+      $inicio = $dados['inicio'];
+    ?>  
+     <h5 class='u-text u-text-1 texto-3 u-text-palette-2-base'><?php echo $nome; ?></h5><br>
+     <h5 class='u-text u-text-1 texto-4'>Horário de início: <?php echo date('H:i', strtotime($inicio)); ?></h5>
+    <?php  
+      }  
+    }
   }  
 ?>
                 
@@ -132,5 +137,9 @@ $writer = new Writer($renderer);
 .texto-3
 {
   margin-bottom: -24px;
+}
+.texto-4
+{
+  margin-top: 10px;
 }
 </style>

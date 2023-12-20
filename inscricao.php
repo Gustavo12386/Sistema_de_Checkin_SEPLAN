@@ -17,7 +17,7 @@ if(empty($_GET['keypass'])){
   <script src="js/jquery-1.11.1.min.js"></script>     
   <script src="js/sweet.js"></script>
   <script src="js/nicepage.js"></script>  
-  <script type="text/javascript" src="js/mascara.js"></script>
+  <script src="js/mascara.js"></script>
 </head>
 <body>  
 
@@ -49,12 +49,13 @@ if(empty($_GET['keypass'])){
                       $fim = $dados['fim']; 
                     ?>
                     <div class="div-texto">  
-                      <h4 class="u-text u-text-1 texto-1">CHECKING SEPLAN</h4>
+                      <h4 class="u-text u-text-1 texto-1">CHECKIN SEPLAN</h4>
                       <h4 class="u-text u-text-1 texto-2">CONFIRME AQUI A SUA PARTICIPAÇÃO</h4>
                       <h3 class="u-text u-text-1 u-text-palette-2-base texto-3"><?php echo $nome;?></h3>              
-                      <h4 class="u-text u-text-1 texto-4">Data: <?php echo $data;?></h4>
-                      <h4 class="u-text u-text-1 texto-5">Horário: <?php echo date('h:i', strtotime($inicio)); ?>
-                      às <?php echo date('h:i', strtotime($fim)); ?></h4>
+                      <h4 class="u-text u-text-1 texto-4">Data: <?php echo date('d/m/Y', strtotime($data));?></h4>
+                      <h4 class="u-text u-text-1 texto-5">Horário: <?php                                          
+                      echo date('H:i',  strtotime($inicio)); ?>
+                      às <?php echo date('H:i', strtotime($fim));  ?></h4>
                       <br>
                     </div>  
                    <?php   
@@ -84,13 +85,11 @@ if(empty($_GET['keypass'])){
                   $hora = date("H:i:s");  
                   if($date_now == $data and $hora > $fim)
                   {
-                   header("Location: mensagem.php");   
+                   echo'<h4 class="u-text u-text-1 u-text-palette-2-base">Esse Evento já foi Realizado!</h4>';
                   } else if($date_now > $data)
                   {
-                   header("Location: mensagem.php");   
-                  }
-                }             
-              ?>  
+                    echo'<h1 class="u-text u-text-1 u-text-palette-2-base">Esse Evento já foi Realizado!</h1>';   
+                  } else { ?>                             
             
           <div class="u-form u-form-1">         
           <form class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;">            
@@ -116,7 +115,8 @@ if(empty($_GET['keypass'])){
               <br>             
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">CPF:</label>
-               <input type="text" placeholder="Digite seu cpf"  maxlength="14" id="cpf" name="cpf" autocomplete="off" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+               <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite o CPF no formato 000.000.000-00"
+                id="cpf" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" maxlength="14">
               </div>
               <br>       
               <div class="u-form-group u-form-name u-label-top">
@@ -159,7 +159,11 @@ if(empty($_GET['keypass'])){
           </div>
         </div>
       </div>
-    </section>    
+    </section>  
+   <?php
+     }     
+   } 
+ ?>   
    <style>
     .tamanho2
     {

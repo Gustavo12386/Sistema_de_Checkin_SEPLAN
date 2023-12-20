@@ -27,7 +27,7 @@ $logado = $_SESSION['nome'];
                 </div>
                 <div class="u-form-group u-label-top u-form-group-2">
 			        	 <label for="text-cce4" class="u-label">Data:</label>
-                  <input type="date" placeholder="Digite a Data" id="data" name="data" class="u-border-1 u-border-grey-30 u-input u-input-rectangle_half" required>
+                  <input type="date" placeholder="Digite a Data" id="data" name="data" oninput="limitarCaracteresData(this, 10)" class="u-border-1 u-border-grey-30 u-input u-input-rectangle_half" required>
 				
                   <div> <label for="text-cce4" class="u-label">Hora Início:</label>
                   <input type="time" placeholder="Digite a Hora" id="inicio" name="inicio" class="u-border-1 u-border-grey-30 u-input u-input-rectangle_half u-white">

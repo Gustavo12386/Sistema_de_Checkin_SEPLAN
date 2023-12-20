@@ -10,6 +10,7 @@
     <script src="js/contador.js"></script>   
     <script src="js/sweet.js"></script>
     <script src="js/nicepage.js"></script>
+    <script src="js/limitar_caracteres.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> 
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
@@ -49,7 +50,7 @@
 	<section class="u-align-center u-clearfix u-image u-shading u-section-1" id="carousel_5ad0" src="" data-image-width="1782" data-image-height="1080">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-custom-font u-font-montserrat u-text u-text-body-alt-color u-title u-text-1"><span style="font-size: 1.875rem;" class="u-text-palette-2-base">
-            <br>CHECKING SEPLAN
+            <br>CHECKIN SEPLAN
           </span>
         </h1>
        

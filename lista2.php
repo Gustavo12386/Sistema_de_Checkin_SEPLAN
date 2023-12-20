@@ -1,4 +1,6 @@
-<?php include('pdo.php')?>
+<?php
+include('pdo.php');
+?>
 <table class ='u-table' align='center' border ='0' cellspacing="14" cellpadding="8">
         <thead style="background-color:#B5B5B5">
           <tr>
@@ -32,12 +34,7 @@ if(!empty($_GET['lista'])){
            <td> <?=$rows['telefone'] ?></td>           
            <td> <?=$rows['orgao'] ?></td>   
            <td> <?=$rows['cargo'] ?></td>                        
-       </tr>
-      <?php 
-     }
-   } 
-  }
-  ?>      
+       </tr>          
   <tbody>
 
 </table> <br><br><br>
@@ -45,15 +42,21 @@ if(!empty($_GET['lista'])){
 <table align="center" border="0">
 <tr>
 <td align="center" bordercolor="#000000">
- <input type="button" id="botao2" value="Imprimir" onClick="window.print()">
- <input type="button" id="botao2" value="Voltar" onClick="window.location.href='eventos.php'">
+<a href='exportar.php?lista=<?=$rows['id'] ?>'><button id="botao">Exportar</button></a> 
+ <input type="button" id="botao" value="Imprimir" onClick="window.print()">
+ <input type="button" id="botao" value="Voltar" onClick="window.location.href='eventos.php'">
 </td>
 </tr>
 </table>
+  <?php 
+      }
+    } 
+    }
+  ?>
 <style>
 @media print
 {
- #botao2
+ #botao
  {
   display:none;
  }   
@@ -62,7 +65,7 @@ if(!empty($_GET['lista'])){
   size: landscape;
 }
 }
-#botao2
+#botao
 {  
   background-color: #232b79;
   border-width: 0px; 
@@ -73,7 +76,7 @@ if(!empty($_GET['lista'])){
   cursor: pointer;
   margin: 0 18px;
 }
-#botao2:hover
+#botao:hover
 {
   background-color: #20286E;
 }

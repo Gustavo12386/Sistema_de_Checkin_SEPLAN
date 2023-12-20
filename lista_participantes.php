@@ -2,6 +2,7 @@
 session_start();
 include ('topo3.php');
 include ('pdo.php');
+
 //se o usuário não estiver logado
 if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
 {
@@ -11,6 +12,10 @@ if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
 }
 //se o usuário estiver logado
 $logado = $_SESSION['nome'];
+// verifica se o get está vazio
+if(empty($_GET['lista'])){
+  echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";
+}
 ?>
 
 
@@ -27,11 +32,17 @@ $logado = $_SESSION['nome'];
           $sql->bindparam(':id', $id);
           $sql->execute();
           if($sql->rowCount() > 0){
-           while($dados = $sql->fetch(PDO::FETCH_ASSOC)){                       
-              echo "<h3 class='u-text u-text-1'>{$dados['nome']}</h3>"; 
-              echo "<br>";                 
-              echo "<h4 class='u-text u-text-1'>Data: {$dados['data']}</h4>";                      
-              echo "<br>";
+           while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
+                $nome = $dados['nome'];
+                $data = $dados['data'];
+                $inicio = $dados['inicio'];
+                $fim = $dados['fim']; 
+              ?>
+              <h3 class='u-text u-text-1'><?php echo $nome;?></h3>
+              <br>                 
+              <h4 class='u-text u-text-1'>Data: <?php echo date('d/m/Y', strtotime($data));?></h4>                      
+              <br>
+              <?php             
              }
            }
          }   
