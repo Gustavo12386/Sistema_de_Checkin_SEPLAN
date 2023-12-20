@@ -1,5 +1,8 @@
 <?php
 include('pdo.php');
+if(empty($_GET['lista'])){
+  echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";
+}
 
 function filterData(&$str){
   $str = preg_replace("/\t/", "\\t", $str); 
@@ -9,8 +12,8 @@ function filterData(&$str){
 $fileName = "participantes" . ".xls";
 // Nomes das Colunas
 $fields = array('ID_Evento', 'N°Inscrição', 'NOME', 'CPF', 'EMAIL', 'TELEFONE', 'ORGÃO', 'CARGO');
-
 $excelData = implode("\t", array_values($fields)) . "\n"; 
+
 if(!empty($_GET['lista'])){
   $id = $_GET['lista'];
   $sql = $conexao_pdo->prepare("SELECT * FROM participantes WHERE id=:id");
@@ -22,7 +25,6 @@ if(!empty($_GET['lista'])){
       $rows['cpf'], $rows['email'], $rows['telefone'], $rows['orgao'], $rows['cargo']);      
       array_walk($informacoes, 'filterData'); 
       $excelData .= implode("\t", array_values($informacoes)) . "\n";
-
     }    
   } else{ 
     $excelData .= 'Valores não encontrados...'. "\n"; 
