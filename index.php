@@ -1,7 +1,14 @@
 <?php
+ob_start();
+//todas as páginas que quiser um lifetime para a sessão
+ini_set('session.gc_maxlifetime', 1800); 
 session_start();
 include ('topo.php');
-
+if (isset($_SESSION['activity']) && (time() - $_SESSION['activity'] > 1800)) {
+  // Se o usuário ficou inativo por mais de 30 minutos, destrua a sessão
+  header("Location:login.php?motivo=inatividade");
+}
+$_SESSION['activity'] = time();
 //se o usuário não estiver logado
 if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
 {
@@ -11,7 +18,6 @@ if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
 }
 //se o usuário estiver logado
 $logado = $_SESSION['nome'];
-
 ?>
     <section class="u-clearfix u-image u-section-3" src="" id="sec-e0b0" data-image-width="5760" data-image-height="3840">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -27,8 +33,7 @@ $logado = $_SESSION['nome'];
                 </div>
                 <div class="u-form-group u-label-top u-form-group-2">
 			        	 <label for="text-cce4" class="u-label">Data:</label>
-                  <input type="date" placeholder="Digite a Data" id="data" name="data" oninput="limitarCaracteresData(this, 10)" class="u-border-1 u-border-grey-30 u-input u-input-rectangle_half" required>
-				
+                  <input type="date" placeholder="Digite a Data" id="data" name="data" oninput="limitarCaracteresData(this, 10)" class="u-border-1 u-border-grey-30 u-input u-input-rectangle_half" required>				
                   <div> <label for="text-cce4" class="u-label">Hora Início:</label>
                   <input type="time" placeholder="Digite a Hora" id="inicio" name="inicio" class="u-border-1 u-border-grey-30 u-input u-input-rectangle_half u-white">
                    <label for="text-cce4" class="u-label">Hora Fim:</label>

@@ -25,7 +25,14 @@
         <div class="u-align-center u-container-style u-group u-opacity u-opacity-70 u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">                 
             <div class="u-form u-form-1">          
-              <form class="erro" action="realizar_login.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">
+              <form class="erro" action="realizar_login.php" method="post" style="padding: 15px;"  enctype="multipart/form-data">              
+              <?php
+                echo '<br><br>';
+                if(!empty($_GET['motivo'])){
+                  echo '<h4 class="u-text-palette-2-base">Sua Sessão expirou!
+                  Faça login novamente para acessar o sistema</h4>';
+                }
+              ?>
               <h4 class="u-text u-text-1">Fazer Login</h4>                             
                   <div class="u-form-group u-form-name u-label-top">                   
                     <label for="name-6715" class="u-label">Nome do Usuário:</label>

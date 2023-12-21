@@ -1,8 +1,19 @@
 <?php 
+ob_start();
+//todas as páginas que quiser um lifetime para a sessão
+ini_set('session.gc_maxlifetime', 1800); 
 session_start();
 include ('topo3.php');
 include ('pdo.php');
+if (isset($_SESSION['activity']) && (time() - $_SESSION['activity'] > 1800)) {
+  // Se o usuário ficou inativo por mais de 30 minutos, destrua a sessão
+  header("Location:login.php?motivo=inatividade");
+}
+$_SESSION['activity'] = time();
 
+if(isset($_SESSION['nome']) and isset($_SESSION['senha'])){
+  session_regenerate_id();  
+}
 //se o usuário não estiver logado
 if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
 {

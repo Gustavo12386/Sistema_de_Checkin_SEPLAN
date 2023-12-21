@@ -1,18 +1,7 @@
 <?php
-session_start();
 extract($_GET); // Transforma em variável
 include('topo4.php');
 include('pdo.php');
-
-//se o usuário não estiver logado
-if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
-{
-   unset($_SESSION['nome']);
-   unset($_SESSION['senha']);
-   echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
-}
-//se o usuário estiver logado
-$logado = $_SESSION['nome'];
 
 include 'composer/vendor/autoload.php';
 
@@ -53,6 +42,9 @@ $writer = new Writer($renderer);
 <div>
 
 <?php
+  if(empty($_GET['key'])){
+    echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";
+  }
   //Exibe nome do evento
   if(!empty($_GET['key'])){
     $keypass = $_GET['key'];  

@@ -48,11 +48,11 @@ if(!empty($_GET['lista'])){
 </td>
 </tr>
 </table>
-  <?php 
-      }
-    } 
-    }
-  ?>
+<?php 
+  }
+ } 
+}
+?>
 <style>
 @media print
 {
