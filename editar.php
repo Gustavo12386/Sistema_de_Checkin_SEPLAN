@@ -9,7 +9,9 @@
     $fim = $_POST['fim'];
     $organizador = $_POST['organizador'];
     $obs = $_POST['obs'];    
-    
+   
+    try
+    {    
     $query = $conexao_pdo->prepare("UPDATE evento SET nome=:nome, data=:data, inicio=:inicio, fim=:fim,
     organizador=:organizador, obs=:obs WHERE id=:id");
     $query->bindparam(':id', $id);
@@ -21,9 +23,7 @@
     $query->bindparam(':obs', $obs);
     $query->execute(); 
     
-    //verifica se os dados foram atualizados
- try
- {  
+    //verifica se os dados foram atualizados 
     if($query->rowCount() > 0)
     {
         echo '<script>';

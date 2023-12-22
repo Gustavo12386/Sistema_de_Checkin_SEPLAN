@@ -14,10 +14,12 @@ if(empty($_GET['keypass'])){
   <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">     
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <script src="js/jquery-1.11.1.min.js"></script>     
-  <script src="js/sweet.js"></script>
-  <script src="js/nicepage.js"></script>  
-  <script src="js/mascara.js"></script>
+  <script src="js/jquery-1.11.1.min.js"></script>  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script> 
+  <script src="js/mascara_cpf.js"></script>
+  <script src="js/mascara_telefone.js"></script>
+  <script src="js/inscricao.js"></script>  
 </head>
 <body>  
 
@@ -126,7 +128,8 @@ if(empty($_GET['keypass'])){
               <br>
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Telefone:</label>
-               <input type="text" placeholder="Digite seu telefone" id="telefone" name="telefone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
+               <input type="tel" onkeyup="handlePhone(event)" placeholder="Digite apenas numeros" maxlength="15"
+               id="telefone" name="telefone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
                <br>              
                <label for="name-6715" class="u-label">Selecione seu Órgão:</label>
               </div>                           
@@ -155,7 +158,8 @@ if(empty($_GET['keypass'])){
              <div class="u-align-left u-form-group u-form-submit u-label-top">                          
                <input type="submit" value="Inscrever-se" name="inscrever" id="inscrever" class="u-btn u-btn-submit u-button-style">                  				     
              </div>
-             </form>                        
+             </form>    
+             <div class="inscricao"></div>                      
           </div>
         </div>
       </div>
@@ -207,6 +211,11 @@ if(empty($_GET['keypass'])){
     .u-label
     {
       margin-left: 30px;
+    }
+    .ins
+    {
+      width: 900px !important;
+      height: 400px !important;
     }
     #inscrever
     {

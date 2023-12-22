@@ -1,7 +1,6 @@
 <?php  
-  include('pdo.php');   
+  include('pdo.php');  
   
-  if(isset($_POST['inscrever'])){
   $id_evento = $_POST['id'];
   $nome = $_POST['nome'];  
   $cpf = $_POST['cpf'];
@@ -12,6 +11,7 @@
   
   try
   {
+    
   $sql = $conexao_pdo->prepare("INSERT INTO participantes (id, nome, cpf, email, telefone, orgao, cargo) VALUES
   (:id, :nome, :cpf, :email, :telefone, :orgao, :cargo)");
   $sql->bindValue(':id', $id_evento);
@@ -21,12 +21,12 @@
   $sql->bindValue(':telefone', $telefone);
   $sql->bindValue(':orgao', $orgao);
   $sql->bindValue(':cargo', $cargo);
-  $sql->execute();  
-  header("Location: confirmacao.php?keypass=true");
+  $sql->execute();
+
   }  
   catch(PDOException $e)
   {
    print "Erro: " . $e->getMessage();
   } 
-}
+
 ?>
