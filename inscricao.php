@@ -18,8 +18,8 @@ if(empty($_GET['keypass'])){
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="js/jquery-1.11.1.min.js"></script> 
-  <script src="js/inscricao.js"> 
-  <script src="js/mascara_cpf.js"></script>
+  <script src="js/inscricao.js"></script> 
+  <script src="js/mas_cpf.js"></script>
   <script src="js/mascara_telefone.js"></script>
   <script src="js/validar.js"></script>  
 </head>
