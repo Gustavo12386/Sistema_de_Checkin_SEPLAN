@@ -14,12 +14,14 @@ if(empty($_GET['keypass'])){
   <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">     
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <script src="js/jquery-1.11.1.min.js"></script>  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="js/jquery-1.11.1.min.js"></script> 
+  <script src="js/inscricao.js"> 
   <script src="js/mascara_cpf.js"></script>
   <script src="js/mascara_telefone.js"></script>
-  <script src="js/inscricao.js"></script>  
+  <script src="js/validar.js"></script>  
 </head>
 <body>  
 
@@ -37,14 +39,17 @@ if(empty($_GET['keypass'])){
           <br><br>                
            <?php
                 //exibe informações do evento
-                if(!empty($_GET['keypass'])){
+                if(!empty($_GET['keypass']))
+                {
                   $key = $_GET['keypass'];
                   $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
                   $sql->bindparam(':keypass', $key);
                   $sql->execute(); 
 
-                  if($sql->rowCount() > 0){
-                    while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
+                  if($sql->rowCount() > 0)
+                  {
+                    while($dados = $sql->fetch(PDO::FETCH_ASSOC))
+                    {
                       $nome = $dados['nome'];
                       $data = $dados['data'];
                       $inicio = $dados['inicio'];
@@ -67,7 +72,8 @@ if(empty($_GET['keypass'])){
              ?>             
              <?php
               // Determina um periodo que o formulário de inscrição ficará disponível
-              if(!empty($_GET['keypass'])){
+              if(!empty($_GET['keypass']))
+              {
                 $key = $_GET['keypass'];
                 $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
                 $sql->bindparam(':keypass', $key);
@@ -91,25 +97,27 @@ if(empty($_GET['keypass'])){
                   } else if($date_now > $data)
                   {
                     echo'<h1 class="u-text u-text-1 u-text-palette-2-base">Esse Evento já foi Realizado!</h1>';   
-                  } else { ?>                             
-            
+                  } else { ?>         
           <div class="u-form u-form-1">         
-          <form class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;">            
+          <form id="meuFormulario" class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;" onsubmit="return validarFormulario()">            
              <?php
               //exibe id da tabela evento para a conexão com a tabela paricipantes por meio da chave estrangeira
-              if(!empty($_GET['keypass'])){
+              if(!empty($_GET['keypass']))
+              {
                 $key = $_GET['keypass'];
                 $sql = $conexao_pdo->prepare("SELECT * FROM evento WHERE keypass=:keypass");
                 $sql->bindparam(':keypass', $key);
                 $sql->execute();
 
-                if($sql->rowCount() > 0){
-                  while($dados = $sql->fetch(PDO::FETCH_ASSOC)){
+                if($sql->rowCount() > 0)
+                {
+                  while($dados = $sql->fetch(PDO::FETCH_ASSOC))
+                  {
                     echo "<input type='hidden' name='id' value='{$dados['id']}'>";                    
                   }  
               }
             }
-             ?>                          
+            ?>                          
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Nome:</label>
                <input type="text" placeholder="Digite seu nome" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
@@ -140,10 +148,12 @@ if(empty($_GET['keypass'])){
                       $stmt = $conexao_pdo->prepare("SELECT * FROM orgao");
                       $stmt->execute();
                       
-                        if($stmt->rowCount() > 0){
-                          while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
-                            echo "<option value='{$dados['nome_orgao']}'>{$dados['nome_orgao']}</option>";
-                          }
+                        if($stmt->rowCount() > 0)
+                        {
+                         while($dados = $stmt->fetch(PDO::FETCH_ASSOC))
+                         {
+                          echo "<option value='{$dados['nome_orgao']}'>{$dados['nome_orgao']}</option>";
+                        }
                       }
 
                     ?>
@@ -165,9 +175,9 @@ if(empty($_GET['keypass'])){
       </div>
     </section>  
    <?php
-     }     
-   } 
- ?>   
+      }     
+    } 
+   ?>   
    <style>
     .tamanho2
     {

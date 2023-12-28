@@ -1,17 +1,15 @@
-<?php  
-  include('pdo.php');  
-  
-  $id_evento = $_POST['id'];
-  $nome = $_POST['nome'];  
-  $cpf = $_POST['cpf'];
-  $email = $_POST['email'];
-  $telefone = $_POST['telefone'];   
-  $orgao = $_POST['orgao'];
-  $cargo = $_POST['cargo'];
-  
-  try
-  {
-    
+<?php
+
+include('pdo.php');    
+$id_evento = $_POST['id'];
+$nome = $_POST['nome']; 
+$cpf = $_POST['cpf'];
+$email = $_POST['email'];
+$telefone = $_POST['telefone'];   
+$orgao = $_POST['orgao'];
+$cargo = $_POST['cargo'];   
+
+try{
   $sql = $conexao_pdo->prepare("INSERT INTO participantes (id, nome, cpf, email, telefone, orgao, cargo) VALUES
   (:id, :nome, :cpf, :email, :telefone, :orgao, :cargo)");
   $sql->bindValue(':id', $id_evento);
@@ -21,12 +19,28 @@
   $sql->bindValue(':telefone', $telefone);
   $sql->bindValue(':orgao', $orgao);
   $sql->bindValue(':cargo', $cargo);
-  $sql->execute();
-
-  }  
+  $sql->execute();   
+      
+  if($sql->rowCount() > 0){
+   echo '<script>';
+     echo "$(document).ready(function(){
+       Swal.fire({
+         title: 'Inscricao Realizada com Sucesso!',
+         icon: 'success',
+         customClass: {
+              popup: 'ins', 
+          }
+        });
+      });";
+    echo'</script>';        
+   }
+  }
+  
   catch(PDOException $e)
   {
-   print "Erro: " . $e->getMessage();
-  } 
+    print "Erro: " . $e->getMessage() . "<br/>";
+  }  
+
+
 
 ?>

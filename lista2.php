@@ -17,13 +17,15 @@ include('pdo.php');
         <tbody>
 <?php
 // exibe informações dos participantes		
-if(!empty($_GET['lista'])){
+if(!empty($_GET['lista']))
+{
    $id = $_GET['lista'];
    $sql = $conexao_pdo->prepare("SELECT * FROM participantes WHERE id=:id");
    $sql->bindparam(':id', $id);
    $sql->execute();
 
-    if($sql->rowCount() > 0){
+    if($sql->rowCount() > 0)
+    {
       while($rows = $sql->fetch(PDO::FETCH_ASSOC)) { ?>       
        <tr>
        <td class="d-print-none"> <?=$rows['id'] ?></td>        
@@ -49,8 +51,8 @@ if(!empty($_GET['lista'])){
 </tr>
 </table>
 <?php 
-  }
- } 
+    }
+  } 
 }
 ?>
 <style>

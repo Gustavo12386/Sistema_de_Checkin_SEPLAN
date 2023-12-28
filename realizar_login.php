@@ -30,7 +30,8 @@ try
       echo '<script>';
       echo '$(document).ready(function(){
       swal("Usuario ou senha incorretos!","", "warning") 
-      });';
+      });
+      })';
       echo'</script>';  
     }
 
