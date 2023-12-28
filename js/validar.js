@@ -45,9 +45,7 @@ function validarCPF(cpf)
 function validarFormulario() {
    // Obtenha o valor do CPF do input
    let cpfInput = $("#cpf");
-   let cpf = cpfInput.val();
-   // Limpa qualquer mensagem de erro anterior
-   $("#erroCPF").text('');
+   let cpf = cpfInput.val();   
    // Remova caracteres não numéricos
    cpf = cpf.replace(/[^\d]/g, '');   
    // Verifique se o CPF é válido
