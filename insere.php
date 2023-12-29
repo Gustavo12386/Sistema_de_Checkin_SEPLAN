@@ -13,6 +13,8 @@ else
 }
 
 // Prepara o Insert
+try
+{
 $insere = $conexao_pdo->prepare("INSERT INTO evento(nome,data,inicio,fim,
    organizador,obs,keypass) 
 	VALUES
@@ -34,7 +36,11 @@ else
   // Mata o script
   exit;
 }
-
+} 
+catch(PDOException $e)
+{
+  print "Erro: " . $e->getMessage();
+}
 $conexao_pdo = null;
 
 ?>

@@ -8,13 +8,12 @@ $senha = addslashes($_POST['senha']);
 $senhamd5 = md5($senha);
 
 //localiza o email e senha e realiza o login
+try
+{
 $sql = $conexao_pdo->prepare("SELECT * FROM usuario WHERE nome = :nome AND senha = :senha");
 $sql->bindparam(':nome', $nome);
 $sql->bindparam(':senha', $senhamd5);
 $sql->execute();
-
-try
-{
 
     if($sql->rowCount() > 0)
     {        
@@ -30,8 +29,7 @@ try
       echo '<script>';
       echo '$(document).ready(function(){
       swal("Usuario ou senha incorretos!","", "warning") 
-      });
-      })';
+      });';
       echo'</script>';  
     }
 
