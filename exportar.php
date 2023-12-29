@@ -13,7 +13,7 @@ function filterData(&$str)
 }
 $fileName = "participantes" . ".xls";
 // Nomes das Colunas
-$fields = array('ID_Evento', 'N°Inscrição', 'NOME', 'CPF', 'EMAIL', 'TELEFONE', 'ORGÃO', 'CARGO');
+$fields = array('ID_Evento', 'N°Inscrição','NOME_EVENTO', 'NOME_PARTICIPANTE', 'CPF', 'EMAIL', 'TELEFONE', 'ORGÃO', 'CARGO');
 $excelData = implode("\t", array_values($fields)) . "\n"; 
 
 if(!empty($_GET['lista']))
@@ -22,15 +22,16 @@ if(!empty($_GET['lista']))
   $sql = $conexao_pdo->prepare("SELECT * FROM participantes WHERE id=:id");
   $sql->bindparam(':id', $id);
   $sql->execute();
+  
   if($sql->rowCount() > 0)
   {
     while($rows = $sql->fetch(PDO::FETCH_ASSOC)) { 
-      $informacoes = array($rows['id'], $rows['id_participante'], $rows['nome'], 
-      $rows['cpf'], $rows['email'], $rows['telefone'], $rows['orgao'], $rows['cargo']);      
+      $informacoes = array($rows['id'], $rows['id_participante'], $rows['nome_evento'],
+      $rows['nome_participante'], $rows['cpf'], $rows['email'], $rows['telefone'], $rows['orgao'], $rows['cargo']);      
       array_walk($informacoes, 'filterData'); 
       $excelData .= implode("\t", array_values($informacoes)) . "\n";
     }    
-  }
+  }  
    else
   { 
     $excelData .= 'Valores não encontrados...'. "\n"; 

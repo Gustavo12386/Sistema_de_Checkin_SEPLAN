@@ -30,7 +30,7 @@ if(!empty($_GET['lista']))
        <tr>
        <td class="d-print-none"> <?=$rows['id'] ?></td>        
            <td> <?=$rows['id_participante'] ?></td>
-           <td> <?=$rows['nome'] ?></td>           
+           <td> <?=$rows['nome_participante'] ?></td>           
            <td> <?=$rows['cpf'] ?></td>
            <td> <?=$rows['email'] ?></td>
            <td> <?=$rows['telefone'] ?></td>           

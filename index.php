@@ -1,10 +1,10 @@
 <?php
 ob_start();
 //todas as páginas que quiser um lifetime para a sessão
-ini_set('session.gc_maxlifetime', 1800); 
+ini_set('session.gc_maxlifetime', 900); 
 session_start();
 include ('topo.php');
-if (isset($_SESSION['activity']) && (time() - $_SESSION['activity'] > 1800)) {
+if (isset($_SESSION['activity']) && (time() - $_SESSION['activity'] > 900)) {
   // Se o usuário ficou inativo por mais de 30 minutos, destrua a sessão
   session_destroy();  
   header("Location:login.php?motivo=inatividade");

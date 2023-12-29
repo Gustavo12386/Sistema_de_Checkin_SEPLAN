@@ -1,4 +1,7 @@
 <?php
+ob_start();
+ini_set('session.gc_maxlifetime', 900); 
+session_start();
 extract($_GET); // Transforma em variável
 include('topo4.php');
 include('pdo.php');
@@ -21,7 +24,19 @@ $renderer = new ImageRenderer(
     new SvgImageBackEnd()
 );
 $writer = new Writer($renderer);
-
+if (isset($_SESSION['activity']) && (time() - $_SESSION['activity'] > 900)) {
+  // Se o usuário ficou inativo por mais de 30 minutos, destrua a sessão
+  header("Location:login.php?motivo=inatividade");
+}
+$_SESSION['activity'] = time();
+//se o usuário não estiver logado
+if((isset($_SESSION['nome']) == false) and (isset($_SESSION['senha']) == false))
+{
+   unset($_SESSION['nome']);
+   unset($_SESSION['senha']);
+   echo "<script language='javascript' type='text/javascript'>window.location.href='login.php'</script>";
+}
+$logado = $_SESSION['nome'];
 ?>
 
 <table align="center" border="0">

@@ -19,7 +19,7 @@ if(empty($_GET['keypass'])){
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="js/jquery-1.11.1.min.js"></script> 
   <script src="js/inscricao.js"></script> 
-  <script src="js/mas_cpf.js"></script>
+  <script src="js/mascara_cpf.js"></script>
   <script src="js/mascara_telefone.js"></script>
   <script src="js/validar.js"></script>  
 </head>
@@ -28,7 +28,7 @@ if(empty($_GET['keypass'])){
 <div class="u-clearfix u-sheet u-sheet-1">
 <br>  
 <header class="u-clearfix u-header u-header" id="sec-a184">
-        <a href="#" title="Home">
+        <a href="index.php" title="Home">
           <img src="images/logo-seplan-1.png" class="tamanho2">
         </a>         
 	</header>       
@@ -113,20 +113,21 @@ if(empty($_GET['keypass'])){
                 {
                   while($dados = $sql->fetch(PDO::FETCH_ASSOC))
                   {
-                    echo "<input type='hidden' name='id' value='{$dados['id']}'>";                    
+                    echo "<input type='hidden' name='id' value='{$dados['id']}'>"; 
+                    echo "<input type='hidden' name='nome_evento' value='{$dados['nome']}'>";                    
                   }  
               }
             }
             ?>                          
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Nome:</label>
-               <input type="text" placeholder="Digite seu nome" id="nome" name="nome" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
+               <input type="text" placeholder="Digite seu nome" id="nome_participante" name="nome_participante" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
               </div>
               <br>             
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">CPF:</label>
                <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite o CPF no formato 000.000.000-00"
-                id="cpf" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" maxlength="14">
+                id="cpf" oninput="formatCPF(this)" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" maxlength="14">
               </div>
               <br>       
               <div class="u-form-group u-form-name u-label-top">
@@ -136,8 +137,8 @@ if(empty($_GET['keypass'])){
               <br>
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Telefone:</label>
-               <input type="tel" onkeyup="handlePhone(event)" placeholder="Digite apenas numeros" maxlength="15"
-               id="telefone" name="telefone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
+               <input type="text" onkeyup="handlePhone(event)" placeholder="Digite apenas numeros" maxlength="15"
+               id="telefone" name="telefone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                <br>              
                <label for="name-6715" class="u-label">Selecione seu Órgão:</label>
               </div>                           
