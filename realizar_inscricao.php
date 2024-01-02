@@ -1,5 +1,5 @@
 <?php 
-
+  include('pdo.php');   
   function validarCPF($cpf){
     $cpf = preg_replace('/[^0-9]/', '', $cpf);    
     if (strlen($cpf) !== 11) {
@@ -41,11 +41,9 @@
       if (!validarCPF($cpf)) {
       echo '<script>alert("CPF Inválido!");</script>';
       exit();
-      }
-  }  
+      }   
     try
-      { 
-      include('pdo.php');    
+      {      
       $id_evento = $_POST['id'];
       $evento = $_POST['nome_evento'];
       $nome = $_POST['nome_participante']; 
@@ -86,7 +84,7 @@
   {
     json_encode(['status' => 'Erro: ' . $e->getMessage()]);
   } 
-
+} 
 
 
 ?>
