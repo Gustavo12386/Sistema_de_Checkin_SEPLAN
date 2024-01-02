@@ -19,7 +19,7 @@ if(empty($_GET['keypass'])){
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="js/jquery-1.11.1.min.js"></script> 
   <script src="js/inscricao.js"></script> 
-  <script src="js/mascara_cpf.js"></script>
+  <script src="js/mascara.js"></script>
   <script src="js/mascara_telefone.js"></script>
   <script src="js/validar.js"></script>  
 </head>
@@ -99,7 +99,7 @@ if(empty($_GET['keypass'])){
                     echo'<h1 class="u-text u-text-1 u-text-palette-2-base">Esse Evento já foi Realizado!</h1>';   
                   } else { ?>         
           <div class="u-form u-form-1">         
-          <form id="meuFormulario" class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;" onsubmit="return validarFormulario()">            
+          <form id="meuFormulario" class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;" onsubmit="validarFormulario(event);">            
              <?php
               //exibe id da tabela evento para a conexão com a tabela paricipantes por meio da chave estrangeira
               if(!empty($_GET['keypass']))
@@ -127,7 +127,8 @@ if(empty($_GET['keypass'])){
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">CPF:</label>
                <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite o CPF no formato 000.000.000-00"
-                id="cpf" oninput="formatCPF(this)" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" maxlength="14">
+                id="cpf" oninput="validarCPF(this.value)" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" maxlength="14">
+                <span id="cpfStatus"></span>
               </div>
               <br>       
               <div class="u-form-group u-form-name u-label-top">
@@ -231,6 +232,10 @@ if(empty($_GET['keypass'])){
     #inscrever
     {
       margin-left: 30px;
+    }
+    #cpfStatus{
+      margin-left: 30px;
+      font-size: 12px;      
     }
    </style> 
  </body> 

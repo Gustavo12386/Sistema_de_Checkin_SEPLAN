@@ -39,8 +39,8 @@
       $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : '';  
       $cpf = preg_replace('/[^0-9]/', '', $cpf);
       if (!validarCPF($cpf)) {
-       json_encode(['status' => 'CPF inválido']);    
-        exit();
+      echo '<script>alert("CPF Inválido!");</script>';
+      exit();
       }
   }  
     try

@@ -49,5 +49,8 @@
     ::placeholder{
       font-size: 32px;  
     }
- 
+    .u-form-group #cpfStatus{
+      margin-left: 45px;
+      font-size: 22px;
+    }
   }
