@@ -122,8 +122,7 @@ if(empty($_GET['keypass'])){
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Nome:</label>
                <input type="text" placeholder="Digite seu nome" id="nome_participante" name="nome_participante" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
-              </div>
-              <br>             
+              </div>              
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">CPF:</label>
                <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite o CPF no formato 000.000.000-00"
@@ -133,13 +132,11 @@ if(empty($_GET['keypass'])){
               <div class="u-form-group u-form-name u-label-top">
                 <label for="name-6715" class="u-label">Email:</label>
                 <input type="email" placeholder="Digite seu email" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
-              </div>
-              <br>
+              </div>              
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Telefone:</label>
                <input type="text" onkeyup="handlePhone(event)" placeholder="Digite apenas numeros" maxlength="15"
-               id="telefone" name="telefone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-               <br>              
+               id="telefone" name="telefone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">                         
                <label for="name-6715" class="u-label">Selecione seu Órgão:</label>
               </div>                           
               <div class="u-form-group u-form-name u-label-top">              
@@ -159,13 +156,11 @@ if(empty($_GET['keypass'])){
 
                     ?>
                     </select>                    
-             </div> 
-             <br> 
+             </div>             
              <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">Cargo:</label>
                <input type="text" placeholder="Digite seu cargo" id="cargo" name="cargo" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
-              </div>
-              <br>                              
+              </div>                                       
              <div class="u-align-left u-form-group u-form-submit u-label-top">                          
                <input type="submit" value="Inscrever-se" name="inscrever" id="inscrever" class="u-btn u-btn-submit u-button-style">                  				     
              </div>
@@ -222,6 +217,7 @@ if(empty($_GET['keypass'])){
     .u-label
     {
       margin-left: 30px;
+      margin-top: 6px;
     }
     .ins
     {
@@ -231,6 +227,7 @@ if(empty($_GET['keypass'])){
     #inscrever
     {
       margin-left: 30px;
+      margin-top: 10px;
     }
     .invalid-cpf
     {
@@ -243,6 +240,10 @@ if(empty($_GET['keypass'])){
     margin-left: 30px;
     font-size: 12px;
     } 
+    .u-form-group
+    {
+      margin-top: 8px;
+    }
    </style> 
  </body> 
 </html>  
