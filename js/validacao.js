@@ -48,15 +48,7 @@ function validarCPFInput() {
   || cpfInput === '333.333.333-33' || cpfInput === '444.444.444-44' || cpfInput === '555.555.555-55'
   || cpfInput === '666.666.666-66' || cpfInput === '777.777.777-77' || cpfInput === '888.888.888-88'
   || cpfInput === '999.999.999-99'){
-    $('#cpf').get(0).setCustomValidity('');
-    if (cpfInput === '000.000.000-00' || cpfInput === '000.000.000-00' || cpfInput === '111.111.111-11' || cpfInput === '222.222.222-22'
-    || cpfInput === '333.333.333-33' || cpfInput === '444.444.444-44' || cpfInput === '555.555.555-55'
-    || cpfInput === '666.666.666-66' || cpfInput === '777.777.777-77' || cpfInput === '888.888.888-88'
-    || cpfInput === '999.999.999-99'){      
-      $('#cpf').prop('required', true);
-    } else {
-      $('#cpf').prop('required', false);
-    }
+    $('#cpf').get(0).setCustomValidity(''); 
   } else { 
     $('#cpf').get(0).setCustomValidity('CPF inválido');
   }
