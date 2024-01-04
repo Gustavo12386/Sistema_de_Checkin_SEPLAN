@@ -49,21 +49,18 @@ if(empty($_GET['lista'])){
                 $inicio = $dados['inicio'];
                 $fim = $dados['fim']; 
               ?>
-              <h3 class='u-text u-text-1'><?php echo $nome;?></h3>
-              <br>                 
-              <h4 class='u-text u-text-1'>Data: <?php echo date('d/m/Y', strtotime($data));?></h4>                      
-              <br>
+              <h3 class='u-text u-text-1'><?php echo $nome;?></h3>                         
+              <h4 class='texto1'>Data: <?php echo date('d/m/Y', strtotime($data));?></h4>             
               <?php             
              }
            }
          }   
        ?>
-      <h3 class="u-text u-text-1">Participantes Presentes</h3> 
+      <h3 class="texto2">Lista de Inscritos</h3> 
       <br>
       <?php include "lista2.php"; ?>
       <br>
-      <br>
-                 
+      <br>                 
     </div>
       </div>
       </div>

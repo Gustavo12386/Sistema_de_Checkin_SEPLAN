@@ -21,7 +21,7 @@ if(empty($_GET['keypass'])){
   <script src="js/inscricao.js"></script> 
   <script src="js/mascara.js"></script>
   <script src="js/mascara_telefone.js"></script>
-  <script src="js/validar.js"></script>  
+  <script src="js/validacao.js"></script>  
 </head>
 <body>  
 
@@ -99,7 +99,7 @@ if(empty($_GET['keypass'])){
                     echo'<h1 class="u-text u-text-1 u-text-palette-2-base">Esse Evento já foi Realizado!</h1>';   
                   } else { ?>         
           <div class="u-form u-form-1">         
-          <form id="meuFormulario" class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;" onsubmit="validarFormulario(event);">            
+          <form id="meuFormulario" class="form" action="realizar_inscricao.php" method="post" style="padding: 15px;">            
              <?php
               //exibe id da tabela evento para a conexão com a tabela paricipantes por meio da chave estrangeira
               if(!empty($_GET['keypass']))
@@ -127,8 +127,8 @@ if(empty($_GET['keypass'])){
               <div class="u-form-group u-form-name u-label-top">
                <label for="name-6715" class="u-label">CPF:</label>
                <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite o CPF no formato 000.000.000-00"
-                id="cpf" oninput="validarCPF(this.value)" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" maxlength="14">
-                <span id="cpfStatus"></span>
+                id="cpf" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" maxlength="14" required>
+                <div id="cpfValidationResult">CPF inválido</div>
               </div>              
               <div class="u-form-group u-form-name u-label-top">
                 <label for="name-6715" class="u-label">Email:</label>
@@ -232,10 +232,17 @@ if(empty($_GET['keypass'])){
     {
       margin-left: 30px;
     }
-    #cpfStatus{
-      margin-left: 30px;
-      font-size: 12px;      
+    .invalid-cpf
+    {
+     border: 1px solid red;
     }
+    #cpfValidationResult
+    {
+    color: red;
+    display: none;
+    margin-left: 30px;
+    font-size: 12px;
+    } 
    </style> 
  </body> 
 </html>  

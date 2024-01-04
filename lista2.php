@@ -86,4 +86,20 @@ if(!empty($_GET['lista']))
 {
   width: 300px;
 } 
+.u-text-1{
+  font-size: 24px;
+}
+.texto1
+{
+  font-weight: inherit;
+  font-size: 21px;
+  margin-top: 15px;
+}
+.texto2
+{
+  font-weight: inherit;
+  font-size: 21px;
+  margin-top: 15px;
+}
+
 </style>

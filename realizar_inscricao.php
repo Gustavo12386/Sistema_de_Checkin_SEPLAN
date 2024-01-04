@@ -39,7 +39,7 @@
       $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : '';  
       $cpf = preg_replace('/[^0-9]/', '', $cpf);
       if (!validarCPF($cpf)) {
-      echo '<script>alert("CPF Inválido!");</script>';
+      echo '<script>alert("CPF Inválido! Sua inscrição não foi realizada.");</script>';     
       exit();
       }   
     try
