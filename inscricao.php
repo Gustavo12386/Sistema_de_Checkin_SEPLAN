@@ -18,7 +18,7 @@ if(empty($_GET['keypass'])){
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="js/jquery-1.11.1.min.js"></script> 
-  <script src="js/inscricao.js"></script> 
+  <script src="js/inscricao.js"></script>
   <script src="js/mascara.js"></script>
   <script src="js/mascara_telefone.js"></script>
   <script src="js/validacao.js"></script>  
@@ -164,7 +164,7 @@ if(empty($_GET['keypass'])){
              <div class="u-align-left u-form-group u-form-submit u-label-top">                          
                <input type="submit" value="Inscrever-se" name="inscrever" id="inscrever" class="u-btn u-btn-submit u-button-style">                  				     
              </div>
-             </form>    
+             </form>                           
              <div class="inscricao"></div>                      
           </div>
         </div>
@@ -220,6 +220,11 @@ if(empty($_GET['keypass'])){
       margin-top: 6px;
     }
     .ins
+    {
+      width: 900px !important;
+      height: 400px !important;
+    }
+    .inv
     {
       width: 900px !important;
       height: 400px !important;

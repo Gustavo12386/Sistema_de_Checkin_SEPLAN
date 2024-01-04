@@ -1,6 +1,6 @@
 function isValidCPF(cpf) {
   cpf = cpf.replace(/[^\d]+/g, '');
-
+  if (cpf === '00000000000') return false; 
   if (cpf.length !== 11) return false;
 
   let sum = 0;
@@ -31,29 +31,30 @@ function isValidCPF(cpf) {
   return true;
 }
 
-$(document).ready(function() {
-  $('#cpf').on('input', function() {
-    const cpfInput = $(this).val();
-    const isValid = isValidCPF(cpfInput);
+function validarCPFInput() {
+  const cpfInput = $('#cpf').val();
+  const isValid = isValidCPF(cpfInput);
 
-    if (isValid) {
-      $('#cpfValidationResult').hide();
-      $(this).removeClass('invalid-cpf');
+  if (isValid  || cpfInput === '000.000.000-00'){
+    $('#cpf').get(0).setCustomValidity('');
+    if (cpfInput === '000.000.000-00'){      
+      $('#cpf').prop('required', true);
     } else {
-      $('#cpfValidationResult').show();
-      $(this).addClass('invalid-cpf');
+      $('#cpf').prop('required', false);
     }
-  });
+  } else { 
+    $('#cpf').get(0).setCustomValidity('CPF inválido');
+  }
+  $('#cpf').get(0).reportValidity();
+}
 
+$(document).ready(function() {
+  $('#cpf').on('input', validarCPFInput);
   $('#cpf').on('blur', function() {
-    if ($(this).val() === '') {
-      $('#cpfValidationResult').hide();
-      $(this).removeClass('invalid-cpf');
+    if ($(this).val() === ''){ 
+      $(this).get(0).setCustomValidity('');
     }
   });
 
-  $('#cpf').on('focus', function() {
-    $('#cpfValidationResult').hide();
-    $(this).removeClass('invalid-cpf');
+
   });
-});
