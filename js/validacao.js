@@ -48,11 +48,11 @@ function validarCPFInput() {
   || cpfInput === '333.333.333-33' || cpfInput === '444.444.444-44' || cpfInput === '555.555.555-55'
   || cpfInput === '666.666.666-66' || cpfInput === '777.777.777-77' || cpfInput === '888.888.888-88'
   || cpfInput === '999.999.999-99'){
-    $('#cpf').get(0).setCustomValidity(''); 
+  //  $('#cpf').get(0).setCustomValidity(''); 
   } else { 
-    $('#cpf').get(0).setCustomValidity('CPF inválido');
+    //$('#cpf').get(0).setCustomValidity('CPF inválido');
   }
-  $('#cpf').get(0).reportValidity();
+    $('#cpf').get(0).reportValidity();
 }
 
 $(document).ready(function() {
