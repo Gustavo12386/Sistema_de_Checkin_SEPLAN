@@ -41,7 +41,7 @@
     
   catch(PDOException $e)
   {
-    json_encode(['status' => 'Erro: ' . $e->getMessage()]);
+    print "Erro: " . $e->getMessage();
   } 
 
 
