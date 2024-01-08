@@ -53,7 +53,7 @@ function isValidCPF(cpf) {
       $('#cpf').addClass('invalid-cpf');
       $('#cpf').get(0).setCustomValidity('Digite o CPF corretamente!');
     }
-  //$('#cpf').get(0).reportValidity();
+  
   }
   
   $(document).ready(function() {
