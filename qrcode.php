@@ -105,48 +105,4 @@ $logado = $_SESSION['nome'];
 </td>
 </tr>
 </table>
-<style>
-@media print
-{
- #botao
- {
-  display: none; 
- }
- .u-text-palette-2-base
- {
-  color: #cf353b;
- }
-}  
-#botao
-{  
-  background-color: #232b79;
-  border-width: 0px; 
-  color: white;
-  width: 100px;
-  height: 35px;
-  cursor: pointer;
-  margin-right: 5px;
-  margin-bottom: 10px;  
-  font-size: 16px;
-}
-#botao:hover
-{
-  background-color: #20286E;
-}
-.logo
-{
-  margin-bottom: -7px;
-}
-.texto-1
-{
-  margin-top: 70px;
-}
-.texto-3
-{
-  margin-bottom: -24px;
-}
-.texto-4
-{
-  margin-top: 10px;
-}
-</style>
+

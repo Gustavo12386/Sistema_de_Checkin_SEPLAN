@@ -1,0 +1,74 @@
+.logo
+{
+ width: 320px;
+ margin-left: 29px;
+ margin-top: 20px;
+}
+.texto-1
+{
+  font-size: 35px;   
+}
+.texto-2
+{
+  font-size: 35px;
+}
+.texto-3
+{
+  font-size: 32px;
+}
+.texto-4
+{
+  font-size: 29px;
+}
+.texto-5
+{
+ font-size: 29px;
+}    
+.menu
+{
+ width:200px;
+ height:38px;  
+ margin-left: 30px;
+ margin-top: 9px;
+}  
+.u-border-1
+{     
+ margin-top: 6px;
+ width: 86%;
+ margin-left: 30px;
+}
+.u-label
+{
+ margin-left: 30px;
+ margin-top: 6px;
+}
+.ins
+{
+ width: 900px !important;
+ height: 400px !important;
+}
+.inv
+{
+ width: 900px !important;
+ height: 400px !important;
+}
+#inscrever
+{
+ margin-left: 30px;
+ margin-top: 10px;
+}   
+.u-form-group
+{
+ margin-top: 8px;
+}
+.invalid-cpf
+{
+ border: 1px solid red;
+}
+#cpfValidationResult
+{
+ color: red;
+ display: none;
+ margin-left: 30px;
+ font-size: 12px;
+}

@@ -10,6 +10,7 @@ if(empty($_GET['keypass'])){
   <meta charset="utf-8" name="viewport">   
   <title>Inscrição</title>  
   <link rel="stylesheet" href="css/nicepage.css" media="screen"> 
+  <link rel="stylesheet" href="css/inscricao.css"> 
   <link rel="stylesheet" href="css/responsivo.css?<?php echo rand(1, 1000);?>"> 
   <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">     
@@ -29,7 +30,7 @@ if(empty($_GET['keypass'])){
 <br>  
 <header class="u-clearfix u-header u-header" id="sec-a184">
         <a href="index.php" title="Home">
-          <img src="images/logo-seplan-1.png" class="tamanho2">
+          <img src="images/logo-seplan-1.png" class="logo">
         </a>         
 	</header>       
     <section class="u-clearfix u-image u-section-3" src="" id="sec-e0b0" data-image-width="5760" data-image-height="3840">
@@ -174,80 +175,6 @@ if(empty($_GET['keypass'])){
       }     
     } 
    ?>   
-   <style>
-    .tamanho2
-    {
-    width: 320px;
-    margin-left: 29px;
-    margin-top: 20px;
-    }
-    .texto-1
-    {
-      font-size: 35px;   
-    }
-    .texto-2
-    {
-      font-size: 35px;
-    }
-    .texto-3
-    {
-      font-size: 32px;
-    }
-    .texto-4
-    {
-      font-size: 29px;
-    }
-    .texto-5
-    {
-      font-size: 29px;
-    }    
-    .menu
-    {
-    width:200px;
-    height:38px;  
-    margin-left: 30px;
-    margin-top: 9px;
-    }  
-    .u-border-1
-    {     
-      margin-top: 6px;
-      width: 86%;
-      margin-left: 30px;
-    }
-    .u-label
-    {
-      margin-left: 30px;
-      margin-top: 6px;
-    }
-    .ins
-    {
-      width: 900px !important;
-      height: 400px !important;
-    }
-    .inv
-    {
-      width: 900px !important;
-      height: 400px !important;
-    }
-    #inscrever
-    {
-      margin-left: 30px;
-      margin-top: 10px;
-    }   
-    .u-form-group
-    {
-      margin-top: 8px;
-    }
-    .invalid-cpf {
-    border: 1px solid red;
-    }
-    #cpfValidationResult{
-    color: red;
-    display: none;
-    margin-left: 30px;
-    font-size: 12px;
-    }
-   </style> 
  </body> 
 </html>  
  

@@ -4,6 +4,7 @@
   <meta charset="utf-8">   
   <title>Login</title>
   <link rel="stylesheet" href="css/nicepage.css" media="screen">
+  <link rel="stylesheet" href="css/login.css">
   <script src="js/jquery-1.11.1.min.js"></script>
   <script src="js/erro.js"></script>
   <script src="js/sweet.js"></script>
@@ -54,41 +55,6 @@
         </div>
       </div>
     </section>
-
-<style>
-  .u-text-1
-  {
-    font-size: 30px;
-    margin-top: 100px;  
-    bottom: 30px;
-    text-align: center; 
-  }
-  .u-container-layout
-  {    
-    top: 10px;
-    right: 60px;    
-  } 
-  .u-label
-  {
-    margin-left: 146px;  
-  }
-  .u-input
-  {
-    width: 78%;
-    margin-left: 146px;
-    margin-top: 5px;
-  }
-  #submitb
-  {
-    margin-left: 146px;
-    margin-top: 10px;
-  }
-  .u-header .u-image-1
-  {
-    margin: 22px auto 0 0;
-    margin-left: 95px;
-  }
-</style>  
 </html>  
  
   

@@ -4,6 +4,7 @@
     <meta charset="utf-8">   
     <title>Página Inicial</title>
     <link rel="stylesheet" href="css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/scripts.js"></script>  

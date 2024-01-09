@@ -4,7 +4,8 @@
 <head>  
   <meta charset="utf-8">   
   <title>Cadastro</title>
-  <link rel="stylesheet" href="css/nicepage.css" media="screen">	
+    <link rel="stylesheet" href="css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="css/cadastro.css">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -52,41 +53,7 @@
           </div>
         </div>
       </div>
-    </section>
-<style>
-  .u-text-1
-  {
-    font-size: 30px;
-    margin-top: 100px;  
-    bottom: 30px;
-    text-align: center; 
-  }
-  .u-container-layout
-  {    
-    top: 5px;
-    right: 60px;    
-  } 
-  .u-label
-  {
-    margin-left: 146px;
-  }
-  .u-border-1
-  {
-    width: 78%;
-    margin-left: 146px;
-    margin-top: 5px;
-  }
-  #submit
-  {
-    margin-left: 146px;
-    margin-top: 10px;
-  }
-  .u-logo-image-1
-  {
-    margin: 0px auto 0 0;
-    margin-left: 95px;
-  }
-</style>     
+    </section>   
 </html>  
  
   

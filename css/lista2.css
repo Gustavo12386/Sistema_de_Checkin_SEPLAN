@@ -1,0 +1,45 @@
+@media print
+{
+ #botao
+ {
+  display:none;
+ }   
+@page
+{
+  size: landscape;
+}
+}
+#botao
+{  
+  background-color: #232b79;
+  border-width: 0px; 
+  color: white;
+  width: 110px;
+  height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 18px;
+}
+#botao:hover
+{
+  background-color: #20286E;
+}
+.tamanho
+{
+  width: 300px;
+} 
+.u-text-1{
+  font-size: 24px;
+}
+.texto1
+{
+  font-weight: inherit;
+  font-size: 21px;
+  margin-top: 15px;
+}
+.texto2
+{
+  font-weight: inherit;
+  font-size: 21px;
+  margin-top: 15px;
+}

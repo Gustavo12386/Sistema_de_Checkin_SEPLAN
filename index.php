@@ -63,20 +63,7 @@ $logado = $_SESSION['nome'];
         </div>
       </div>
     </section>
-  <style>
-   .u-btn
-   {
-    margin: 2px;
-   }
-   .u-input
-   {
-    margin-top: 4px;
-   }
-   .u-label
-   {
-    margin-top: 4px;
-   }
-  </style>
+ 
   
  
   
