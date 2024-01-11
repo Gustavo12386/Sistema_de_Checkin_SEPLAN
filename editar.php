@@ -1,5 +1,5 @@
 <?php
-    include('pdo.php');
+    include('config/pdo.php');
     //Realiza a edição do evento       
     
     $id = $_POST['id'];

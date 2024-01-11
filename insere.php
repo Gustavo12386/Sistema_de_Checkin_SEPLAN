@@ -1,6 +1,6 @@
 <?php
 extract($_POST); // Transforma em variável
-include('pdo.php');
+include('config/pdo.php');
 
 $rows = $conexao_pdo->query("SELECT max(id) FROM evento")->fetch();
 if(empty($rows))

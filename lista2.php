@@ -1,5 +1,5 @@
 <?php
-include('pdo.php');
+include('config/pdo.php');
 ?>
 <table class ='u-table' align='center' border ='0' cellspacing="14" cellpadding="8">
         <thead style="background-color:#B5B5B5">

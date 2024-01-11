@@ -1,5 +1,5 @@
 <?php
-include('pdo.php');
+include('config/pdo.php');
 $sql = "SELECT * FROM evento";
 $result = $conexao_pdo->query($sql);
 ?>

@@ -4,7 +4,7 @@ ob_start();
 ini_set('session.gc_maxlifetime', 900); 
 session_start();
 include ('topo3.php');
-include ('pdo.php');
+include ('config/pdo.php');
 if (isset($_SESSION['activity']) && (time() - $_SESSION['activity'] > 900)) {
   // Se o usuário ficou inativo por mais de 30 minutos, destrua a sessão
   header("Location:login.php?motivo=inatividade");

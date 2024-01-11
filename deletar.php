@@ -1,5 +1,5 @@
 <?php
-include('pdo.php');
+include('config/pdo.php');
 
 if(empty($_GET['deletar']))
 {

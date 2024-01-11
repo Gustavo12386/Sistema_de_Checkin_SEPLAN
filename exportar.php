@@ -1,5 +1,5 @@
 <?php
-include('pdo.php');
+include('config/pdo.php');
 if(empty($_GET['lista']))
 {
   echo "<script language='javascript' type='text/javascript'>window.location.href='index.php'</script>";

@@ -4,7 +4,7 @@ ini_set('session.gc_maxlifetime', 900);
 session_start();
 extract($_GET); // Transforma em variável
 include('topo4.php');
-include('pdo.php');
+include('config/pdo.php');
 
 include 'composer/vendor/autoload.php';
 

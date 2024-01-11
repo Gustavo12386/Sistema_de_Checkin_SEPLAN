@@ -1,5 +1,5 @@
 <?php
-include('pdo.php');
+include('config/pdo.php');
 
 $nome = addslashes($_POST['nome']);
 $senha = addslashes($_POST['senha']);
