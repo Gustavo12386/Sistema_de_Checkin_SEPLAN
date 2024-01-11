@@ -22,7 +22,7 @@ if(empty($_GET['keypass'])){
   <script src="js/inscricao.js"></script>
   <script src="js/mascara.js"></script>
   <script src="js/mascara_telefone.js"></script>
-  <script src="js/validar.js"></script>  
+  <script src="js/validar.js"></script> 
 </head>
 <body>  
 
@@ -128,7 +128,7 @@ if(empty($_GET['keypass'])){
                <label for="name-6715" class="u-label">CPF:</label>
                <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite seu CPF"
                 id="cpf" name="cpf" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" maxlength="14" required> 
-               <div id="cpfValidationResult">CPF inválido</div>               
+               <div id="cpfValidationResult">CPF inválido</div>           
               </div>              
               <div class="u-form-group u-form-name u-label-top">
                 <label for="name-6715" class="u-label">Email:</label>
