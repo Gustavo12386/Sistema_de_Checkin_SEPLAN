@@ -17,8 +17,7 @@ if(empty($_GET['keypass'])){
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="js/jquery-1.11.1.min.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>  
   <script src="js/inscricao.js"></script>
   <script src="js/mascara.js"></script>
   <script src="js/mascara_telefone.js"></script>
@@ -141,7 +140,8 @@ if(empty($_GET['keypass'])){
                <label for="name-6715" class="u-label">Selecione seu Órgão:</label>
               </div>                           
               <div class="u-form-group u-form-name u-label-top">              
-                    <select name="orgao" class="menu">                    
+                    <select name="orgao" class="menu" required>  
+                    <option value="">Selecionar:</option>                    
                     <?php
                     // exibe os orgãos para realizar a seleção do orgão
                       $stmt = $conexao_pdo->prepare("SELECT * FROM orgao");
