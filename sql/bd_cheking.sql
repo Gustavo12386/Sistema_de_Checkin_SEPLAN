@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/01/2024 às 13:59
+-- Tempo de geração: 29/01/2024 às 14:42
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -37,15 +37,6 @@ CREATE TABLE `evento` (
   `keypass` varchar(100) DEFAULT NULL,
   `organizador` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `evento`
---
-
-INSERT INTO `evento` (`id`, `nome`, `data`, `inicio`, `fim`, `obs`, `keypass`, `organizador`) VALUES
-(6, 'Teste 2', '2023-11-30', '08:00:00', '12:00:00', 'jkhkjhk', 'c81e728d9d4c2f636f067f89cc14862c', 'Valnei'),
-(9, 'Evento Fim de Ano', '2024-12-25', '14:00:00', '18:00:00', 'ffggfg', 'c9f0f895fb98ab9159f51fd0297e236d', 'Teste'),
-(12, 'Evento Teste Final', '2024-03-04', '14:30:00', '16:00:00', 'Teste.\'dsfdsfsd\'dfd', '45c48cce2e2d7fbdea1afc51c7c6ad26', 'APG SEPLAN');
 
 -- --------------------------------------------------------
 
@@ -110,14 +101,6 @@ CREATE TABLE `participantes` (
   `cargo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `participantes`
---
-
-INSERT INTO `participantes` (`id`, `id_participante`, `nome_evento`, `nome_participante`, `cpf`, `email`, `telefone`, `orgao`, `cargo`) VALUES
-(9, 3, 'Evento Fim de Ano', 'Gustavo', '05905891567', 'email@email.com', '(71) 98139-5576', 'SEPLAN', 'Cargo'),
-(9, 29, 'Evento Fim de Ano', 'kjjkj', '922.040.075-87', 'tes@t.com', '(89) 78987-8978', 'CONDER', 'hgfghf');
-
 -- --------------------------------------------------------
 
 --
@@ -130,13 +113,6 @@ CREATE TABLE `usuario` (
   `email` varchar(144) DEFAULT NULL,
   `senha` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `usuario`
---
-
-INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
-(1, 'admin', 'admin@email.com', 'e10adc3949ba59abbe56e057f20f883e');
 
 --
 -- Índices para tabelas despejadas
@@ -175,7 +151,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `orgao`
@@ -187,13 +163,13 @@ ALTER TABLE `orgao`
 -- AUTO_INCREMENT de tabela `participantes`
 --
 ALTER TABLE `participantes`
-  MODIFY `id_participante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_participante` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restrições para tabelas despejadas
